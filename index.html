@@ -7,7 +7,136 @@
 
     <link rel="stylesheet" href="./src/output.css" />
   </head>
-  <body class="bg-gray-100 flex items-center justify-center h-screen">
-    <h1 class="text-4xl font-bold text-blue-600">Tailwind CSS Working 🚀</h1>
+  <body class="">
+    <nav
+    class="fixed top-0 left-0 right-0 z-50 bg-secondary/95 backdrop-blur-md border-b border-secondary-foreground/10"
+  >
+    <div class="container flex items-center justify-between h-16 md:h-20">
+
+      <!-- Logo -->
+      <button onclick="goHome()" class="flex items-center gap-2">
+        <img src="./images/logo.png" alt="Logo" class="h-8 md:h-10" />
+      </button>
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex items-center gap-8">
+
+        <button onclick="scrollToSection('#about')"
+          class="text-secondary-foreground/80 hover:text-primary transition-colors text-sm font-medium tracking-wide">
+          About us
+        </button>
+
+        <button onclick="scrollToSection('#background')"
+          class="text-secondary-foreground/80 hover:text-primary transition-colors text-sm font-medium tracking-wide">
+          Background
+        </button>
+
+        <button onclick="scrollToSection('#team')"
+          class="text-secondary-foreground/80 hover:text-primary transition-colors text-sm font-medium tracking-wide">
+          Team
+        </button>
+
+        <button onclick="scrollToSection('#workshops')"
+          class="text-secondary-foreground/80 hover:text-primary transition-colors text-sm font-medium tracking-wide">
+          Workshops
+        </button>
+
+        <button onclick="scrollToSection('#press')"
+          class="text-secondary-foreground/80 hover:text-primary transition-colors text-sm font-medium tracking-wide">
+          Press
+        </button>
+
+        <!-- Contact Button -->
+        <button
+          onclick="scrollToSection('#contact')"
+          class="bg-primary text-primary-foreground px-5 py-2.5 rounded-lg text-sm font-semibold hover:brightness-110 transition"
+        >
+          Contact
+        </button>
+
+        <!-- Language Button -->
+        <button
+          onclick="toggleLanguage()"
+          class="flex items-center gap-1.5 text-secondary-foreground/70 hover:text-primary transition-colors text-sm"
+        >
+          <i data-lucide="globe" class="w-4 h-4"></i>
+          <span id="desktop-lang">EN</span>
+        </button>
+      </div>
+
+      <!-- Mobile Buttons -->
+      <div class="flex md:hidden items-center gap-3">
+
+        <button
+          onclick="toggleLanguage()"
+          class="text-secondary-foreground/70 hover:text-primary"
+        >
+          <i data-lucide="globe" class="w-5 h-5"></i>
+        </button>
+
+        <button
+          onclick="toggleMobileMenu()"
+          class="text-secondary-foreground"
+        >
+          <i data-lucide="menu" id="menuIcon" class="w-6 h-6"></i>
+        </button>
+
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div
+      id="mobileMenu"
+      class="md:hidden bg-secondary border-t border-secondary-foreground/10 overflow-hidden"
+    >
+      <div class="container py-4 flex flex-col gap-3">
+
+        <button onclick="scrollToSection('#about')"
+          class="text-secondary-foreground/80 hover:text-primary py-2 text-left text-base">
+          About us
+        </button>
+
+        <button onclick="scrollToSection('#background')"
+          class="text-secondary-foreground/80 hover:text-primary py-2 text-left text-base">
+          Background
+        </button>
+
+        <button onclick="scrollToSection('#team')"
+          class="text-secondary-foreground/80 hover:text-primary py-2 text-left text-base">
+          Team
+        </button>
+
+        <button onclick="scrollToSection('#workshops')"
+          class="text-secondary-foreground/80 hover:text-primary py-2 text-left text-base">
+          Workshops
+        </button>
+
+        <button onclick="scrollToSection('#press')"
+          class="text-secondary-foreground/80 hover:text-primary py-2 text-left text-base">
+          Press
+        </button>
+
+        <button
+          onclick="scrollToSection('#contact')"
+          class="bg-primary text-primary-foreground px-5 py-2.5 rounded-lg text-sm font-semibold w-fit"
+        >
+          Contact
+        </button>
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- Dummy Sections -->
+  <section id="about" class="h-screen pt-32 px-5">About Section</section>
+  <section id="background" class="h-screen px-5">Background Section</section>
+  <section id="team" class="h-screen px-5">Team Section</section>
+  <section id="workshops" class="h-screen px-5">Workshops Section</section>
+  <section id="press" class="h-screen px-5">Press Section</section>
+  <section id="contact" class="h-screen px-5">Contact Section</section>
+
+
+
+   <script src="main.js"></script>
   </body>
 </html>
