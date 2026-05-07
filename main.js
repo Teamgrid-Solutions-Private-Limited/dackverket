@@ -87,3 +87,178 @@ document.addEventListener("DOMContentLoaded", () => {
 
   observer.observe(section);
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const heading = document.getElementById("workshopsHeading");
+  const cards = document.querySelectorAll(".workshop-card");
+
+  // Heading Animation
+  const headingObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          heading.classList.remove("opacity-0", "translate-y-8");
+          heading.classList.add("opacity-100", "translate-y-0");
+        }
+      });
+    },
+    {
+      threshold: 0.2,
+    }
+  );
+
+  headingObserver.observe(heading);
+
+  // Cards Animation
+  const cardsObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+
+          setTimeout(() => {
+            entry.target.classList.remove(
+              "opacity-0",
+              "translate-y-8"
+            );
+
+            entry.target.classList.add(
+              "opacity-100",
+              "translate-y-0"
+            );
+          }, index * 100);
+
+        }
+      });
+    },
+    {
+      threshold: 0.15,
+    }
+  );
+
+  cards.forEach((card) => {
+    cardsObserver.observe(card);
+  });
+
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const heading = document.getElementById("pressHeading");
+  const cards = document.querySelectorAll(".press-item");
+  const toggleBtn = document.getElementById("togglePressBtn");
+
+  const INITIAL_COUNT = 5;
+
+  let expanded = false;
+
+  // Hide cards after first 6
+  cards.forEach((card, index) => {
+    if (index >= INITIAL_COUNT) {
+      card.classList.add("hidden");
+    }
+  });
+
+  // Heading Animation
+  const headingObserver = new IntersectionObserver(
+    (entries) => {
+
+      entries.forEach((entry) => {
+
+        if (entry.isIntersecting) {
+
+          heading.classList.remove(
+            "opacity-0",
+            "translate-y-8"
+          );
+
+          heading.classList.add(
+            "opacity-100",
+            "translate-y-0"
+          );
+
+        }
+
+      });
+
+    },
+    {
+      threshold: 0.2,
+    }
+  );
+
+  headingObserver.observe(heading);
+
+  // Cards Animation
+  const cardsObserver = new IntersectionObserver(
+    (entries) => {
+
+      entries.forEach((entry, index) => {
+
+        if (entry.isIntersecting) {
+
+          setTimeout(() => {
+
+            entry.target.classList.remove(
+              "opacity-0",
+              "translate-y-8"
+            );
+
+            entry.target.classList.add(
+              "opacity-100",
+              "translate-y-0"
+            );
+
+          }, index * 100);
+
+        }
+
+      });
+
+    },
+    {
+      threshold: 0.15,
+    }
+  );
+
+  cards.forEach((card) => {
+    cardsObserver.observe(card);
+  });
+
+  // Toggle Button
+  toggleBtn.addEventListener("click", () => {
+
+    expanded = !expanded;
+
+    if (expanded) {
+
+      // Show all cards
+      cards.forEach((card) => {
+        card.classList.remove("hidden");
+      });
+
+      toggleBtn.textContent = "Show less";
+
+    } else {
+
+      // Hide cards after first 6
+      cards.forEach((card, index) => {
+
+        if (index >= INITIAL_COUNT) {
+          card.classList.add("hidden");
+        }
+
+      });
+
+      toggleBtn.textContent = `Show all (${cards.length})`;
+
+      // Scroll to section
+      document.querySelector("#press").scrollIntoView({
+        behavior: "smooth",
+      });
+
+    }
+
+  });
+
+});
