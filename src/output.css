@@ -674,6 +674,14 @@ h1, h2, h3, h4 {
   margin-bottom: 2.5rem;
 }
 
+.mb-12{
+  margin-bottom: 3rem;
+}
+
+.mb-14{
+  margin-bottom: 3.5rem;
+}
+
 .mb-2{
   margin-bottom: 0.5rem;
 }
@@ -714,8 +722,11 @@ h1, h2, h3, h4 {
   margin-top: 1.5rem;
 }
 
-.mb-14{
-  margin-bottom: 3.5rem;
+.line-clamp-2{
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 
 .block{
@@ -738,12 +749,20 @@ h1, h2, h3, h4 {
   display: none;
 }
 
+.aspect-\[16\/10\]{
+  aspect-ratio: 16/10;
+}
+
 .h-12{
   height: 3rem;
 }
 
 .h-16{
   height: 4rem;
+}
+
+.h-3\.5{
+  height: 0.875rem;
 }
 
 .h-4{
@@ -766,8 +785,8 @@ h1, h2, h3, h4 {
   height: 2rem;
 }
 
-.h-3\.5{
-  height: 0.875rem;
+.h-full{
+  height: 100%;
 }
 
 .min-h-screen{
@@ -776,6 +795,14 @@ h1, h2, h3, h4 {
 
 .w-12{
   width: 3rem;
+}
+
+.w-16{
+  width: 4rem;
+}
+
+.w-3\.5{
+  width: 0.875rem;
 }
 
 .w-4{
@@ -799,8 +826,8 @@ h1, h2, h3, h4 {
   width: fit-content;
 }
 
-.w-3\.5{
-  width: 0.875rem;
+.w-full{
+  width: 100%;
 }
 
 .max-w-2xl{
@@ -845,6 +872,10 @@ h1, h2, h3, h4 {
 
 .translate-y-8{
   --tw-translate-y: 2rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.transform{
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -896,6 +927,10 @@ h1, h2, h3, h4 {
   justify-content: space-between;
 }
 
+.gap-1{
+  gap: 0.25rem;
+}
+
 .gap-1\.5{
   gap: 0.375rem;
 }
@@ -912,6 +947,10 @@ h1, h2, h3, h4 {
   gap: 1rem;
 }
 
+.gap-5{
+  gap: 1.25rem;
+}
+
 .gap-6{
   gap: 1.5rem;
 }
@@ -920,8 +959,10 @@ h1, h2, h3, h4 {
   gap: 2rem;
 }
 
-.gap-5{
-  gap: 1.25rem;
+.space-y-2 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
 }
 
 .space-y-4 > :not([hidden]) ~ :not([hidden]){
@@ -932,6 +973,16 @@ h1, h2, h3, h4 {
 
 .overflow-hidden{
   overflow: hidden;
+}
+
+.truncate{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rounded-full{
+  border-radius: 9999px;
 }
 
 .rounded-lg{
@@ -958,6 +1009,10 @@ h1, h2, h3, h4 {
   border-color: hsl(var(--border));
 }
 
+.border-primary\/30{
+  border-color: hsl(var(--primary) / 0.3);
+}
+
 .border-secondary-foreground\/10{
   border-color: hsl(var(--secondary-foreground) / 0.1);
 }
@@ -976,6 +1031,10 @@ h1, h2, h3, h4 {
 
 .bg-card{
   background-color: hsl(var(--card));
+}
+
+.bg-muted{
+  background-color: hsl(var(--muted));
 }
 
 .bg-primary{
@@ -1010,12 +1069,17 @@ h1, h2, h3, h4 {
   background-repeat: no-repeat;
 }
 
-.p-6{
-  padding: 1.5rem;
+.object-cover{
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .p-5{
   padding: 1.25rem;
+}
+
+.p-6{
+  padding: 1.5rem;
 }
 
 .px-4{
@@ -1026,6 +1090,11 @@ h1, h2, h3, h4 {
 .px-5{
   padding-left: 1.25rem;
   padding-right: 1.25rem;
+}
+
+.px-6{
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 .px-8{
@@ -1058,6 +1127,11 @@ h1, h2, h3, h4 {
   padding-bottom: 6rem;
 }
 
+.py-3{
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
 .py-3\.5{
   padding-top: 0.875rem;
   padding-bottom: 0.875rem;
@@ -1074,6 +1148,10 @@ h1, h2, h3, h4 {
 
 .pt-20{
   padding-top: 5rem;
+}
+
+.pt-4{
+  padding-top: 1rem;
 }
 
 .text-left{
@@ -1147,6 +1225,10 @@ h1, h2, h3, h4 {
   line-height: 1.625;
 }
 
+.leading-snug{
+  line-height: 1.375;
+}
+
 .leading-tight{
   line-height: 1.25;
 }
@@ -1191,6 +1273,10 @@ h1, h2, h3, h4 {
   color: hsl(var(--primary) / 0.4);
 }
 
+.text-primary\/60{
+  color: hsl(var(--primary) / 0.6);
+}
+
 .text-secondary-foreground{
   color: hsl(var(--secondary-foreground));
 }
@@ -1224,10 +1310,6 @@ h1, h2, h3, h4 {
   color: rgb(255 255 255 / 0.7);
 }
 
-.text-primary\/60{
-  color: hsl(var(--primary) / 0.6);
-}
-
 .opacity-0{
   opacity: 0;
 }
@@ -1244,16 +1326,16 @@ h1, h2, h3, h4 {
   opacity: 0.6;
 }
 
+.opacity-70{
+  opacity: 0.7;
+}
+
 .opacity-80{
   opacity: 0.8;
 }
 
 .opacity-90{
   opacity: 0.9;
-}
-
-.opacity-70{
-  opacity: 0.7;
 }
 
 .shadow-lg{
@@ -1291,8 +1373,18 @@ h1, h2, h3, h4 {
   transition-duration: 150ms;
 }
 
+.transition-transform{
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 .duration-300{
   transition-duration: 300ms;
+}
+
+.duration-500{
+  transition-duration: 500ms;
 }
 
 .duration-700{
@@ -1330,35 +1422,29 @@ h1, h2, h3, h4 {
   /* muted Swedish blue */
 }
 
-.hover\:border-primary\/50:hover{
-  border-color: hsl(var(--primary) / 0.5);
-}
-
 .hover\:border-primary\/30:hover{
   border-color: hsl(var(--primary) / 0.3);
+}
+
+.hover\:border-primary\/40:hover{
+  border-color: hsl(var(--primary) / 0.4);
+}
+
+.hover\:border-primary\/50:hover{
+  border-color: hsl(var(--primary) / 0.5);
 }
 
 .hover\:bg-section-dark-fg\/10:hover{
   background-color: hsl(var(--section-dark-fg) / 0.1);
 }
 
-.hover\:text-blue-500:hover{
+.hover\:text-\[\#EE862B\]:hover{
   --tw-text-opacity: 1;
-  color: rgb(59 130 246 / var(--tw-text-opacity, 1));
+  color: rgb(238 134 43 / var(--tw-text-opacity, 1));
 }
 
 .hover\:text-primary:hover{
   color: hsl(var(--primary));
-}
-
-.hover\:text-red-500:hover{
-  --tw-text-opacity: 1;
-  color: rgb(239 68 68 / var(--tw-text-opacity, 1));
-}
-
-.hover\:text-\[\#EE862B\]:hover{
-  --tw-text-opacity: 1;
-  color: rgb(238 134 43 / var(--tw-text-opacity, 1));
 }
 
 .hover\:brightness-110:hover{
@@ -1368,6 +1454,16 @@ h1, h2, h3, h4 {
 
 .hover\:glow-amber:hover {
   box-shadow: 0 0 40px hsla(28, 90%, 55%, 0.15);
+}
+
+.group:hover .group-hover\:scale-105{
+  --tw-scale-x: 1.05;
+  --tw-scale-y: 1.05;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.group:hover .group-hover\:text-primary{
+  color: hsl(var(--primary));
 }
 
 @media (min-width: 640px){
@@ -1395,6 +1491,10 @@ h1, h2, h3, h4 {
 
   .md\:h-20{
     height: 5rem;
+  }
+
+  .md\:grid-cols-2{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .md\:grid-cols-4{
@@ -1436,6 +1536,10 @@ h1, h2, h3, h4 {
 }
 
 @media (min-width: 1024px){
+  .lg\:grid-cols-3{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .lg\:grid-cols-4{
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
