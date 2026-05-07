@@ -142,110 +142,342 @@
       </div>
     </nav>
 
-    <div class="min-h-screen bg-black text-white">
-      <section
-        class="relative min-h-screen flex items-center justify-center overflow-hidden"
-      >
-        <!-- Background image -->
+    <section
+      class="relative min-h-screen flex items-center justify-center overflow-hidden"
+    >
+      <!-- Background image -->
+      <div
+        class="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style="background-image: url(&quot;./images/hero-bg.jpg&quot;)"
+      ></div>
+
+      <!-- Overlay -->
+      <div class="absolute inset-0 hero-overlay"></div>
+
+      <!-- Content -->
+      <div class="relative z-10 container mx-auto text-center px-4 pt-20">
+        <!-- Heading -->
+        <h1
+          class="hero-title font-bold text-white text-4xl md:text-6xl lg:text-7xl max-w-4xl mx-auto leading-tight opacity-0 translate-y-10"
+        >
+          Building Sweden's leading ownership platform for tire service
+        </h1>
+
+        <!-- Subtitle -->
+        <p
+          class="hero-subtitle mt-6 text-lg md:text-xl text-white/70 max-w-2xl mx-auto opacity-0 translate-y-8"
+        >
+          A platform where experienced entrepreneurs continue to run their
+          workshops — with the power of a shared growth journey.
+        </p>
+
+        <!-- Buttons -->
         <div
-          class="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style="background-image: url(&quot;./images/hero-bg.jpg&quot;)"
-        ></div>
-
-        <!-- Overlay -->
-        <div class="absolute inset-0 bg-black/55"></div>
-
-        <!-- Content -->
-        <div class="relative z-10 container mx-auto text-center px-4 pt-20">
-          <!-- Heading -->
-          <h1
-            class="hero-title font-bold text-white text-4xl md:text-6xl lg:text-7xl max-w-4xl mx-auto leading-tight opacity-0 translate-y-10"
+          class="hero-buttons mt-10 flex flex-col sm:flex-row gap-4 justify-center opacity-0 translate-y-5"
+        >
+          <a
+            href="#contact"
+            class="bg-primary text-primary-foreground px-8 py-3.5 rounded-lg font-semibold text-base hover:brightness-110 transition shadow-lg"
           >
-            Empowering Global Innovation Through Strategic Partnerships
-          </h1>
+            Contact us
+          </a>
 
-          <!-- Subtitle -->
-          <p
-            class="hero-subtitle mt-6 text-lg md:text-xl text-white/70 max-w-2xl mx-auto opacity-0 translate-y-8"
+          <a
+            href="#about"
+            class="border border-section-dark-fg/30 text-section-dark-fg px-8 py-3.5 rounded-lg font-medium text-base hover:bg-section-dark-fg/10 transition"
           >
-            We help businesses expand across regions, accelerate growth, and
-            build lasting impact worldwide.
-          </p>
+            Learn more
+          </a>
+        </div>
 
-          <!-- Buttons -->
-          <div
-            class="hero-buttons mt-10 flex flex-col sm:flex-row gap-4 justify-center opacity-0 translate-y-5"
-          >
-            <a
-              href="#contact"
-              class="bg-blue-600 text-white px-8 py-3.5 rounded-lg font-semibold text-base hover:brightness-110 transition shadow-lg"
+        <!-- Stats -->
+        <div
+          class="hero-stats mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto border-t border-white/10 pt-10 opacity-0 translate-y-5"
+        >
+          <div class="text-center">
+            <div
+              class="font-display text-3xl md:text-4xl font-bold text-primary"
             >
-              Get Started
-            </a>
-
-            <a
-              href="#about"
-              class="border border-white/30 text-white px-8 py-3.5 rounded-lg font-medium text-base hover:bg-white/10 transition"
+              16
+            </div>
+            <div
+              class="text-xs md:text-sm uppercase tracking-wider text-white/60 mt-1"
             >
-              Learn More
-            </a>
+              Workshops
+            </div>
           </div>
 
-          <!-- Stats -->
-          <div
-            class="hero-stats mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto border-t border-white/10 pt-10 opacity-0 translate-y-5"
-          >
-            <div class="text-center">
-              <div class="text-3xl md:text-4xl font-bold text-blue-500">16</div>
-              <div
-                class="text-xs md:text-sm uppercase tracking-wider text-white/60 mt-1"
-              >
-                Workshops
-              </div>
+          <div class="text-center">
+            <div
+              class="font-display text-3xl md:text-4xl font-bold text-primary"
+            >
+              9
             </div>
-
-            <div class="text-center">
-              <div class="text-3xl md:text-4xl font-bold text-blue-500">9</div>
-              <div
-                class="text-xs md:text-sm uppercase tracking-wider text-white/60 mt-1"
-              >
-                Regions
-              </div>
+            <div
+              class="text-xs md:text-sm uppercase tracking-wider text-white/60 mt-1"
+            >
+              Swedish counties
             </div>
+          </div>
 
-            <div class="text-center">
-              <div class="text-3xl md:text-4xl font-bold text-blue-500">15</div>
-              <div
-                class="text-xs md:text-sm uppercase tracking-wider text-white/60 mt-1"
-              >
-                Acquisitions
-              </div>
+          <div class="text-center">
+            <div
+              class="font-display text-3xl md:text-4xl font-bold text-primary"
+            >
+              15
             </div>
+            <div
+              class="text-xs md:text-sm uppercase tracking-wider text-white/60 mt-1"
+            >
+              Acquisitions completed
+            </div>
+          </div>
 
-            <div class="text-center">
-              <div class="text-3xl md:text-4xl font-bold text-blue-500">
-                2024
-              </div>
-              <div
-                class="text-xs md:text-sm uppercase tracking-wider text-white/60 mt-1"
-              >
-                Founded
-              </div>
+          <div class="text-center">
+            <div
+              class="font-display text-3xl md:text-4xl font-bold text-primary"
+            >
+              2024
+            </div>
+            <div
+              class="text-xs md:text-sm uppercase tracking-wider text-white/60 mt-1"
+            >
+              Founded
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- Scroll Down -->
-        <div
-          class="scroll-indicator absolute bottom-8 left-1/2 -translate-x-1/2 opacity-0"
+      <!-- Scroll Down -->
+      <div
+        class="scroll-indicator absolute bottom-8 left-1/2 -translate-x-1/2 opacity-0"
+      >
+        <a
+          href="#about"
+          class="text-white/50 hover:text-[#EE862B] transition animate-bounce"
         >
-          <a
-            href="#about"
-            class="text-white/50 hover:text-blue-500 transition animate-bounce"
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-arrow-down w-6 h-6"
           >
+            <path d="M12 5v14"></path>
+            <path d="m19 12-7 7-7-7"></path>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <section class="py-20 bg-background">
+      <div class="container">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Card 1 -->
+          <div
+            class="value-card opacity-0 translate-y-8 bg-card rounded-xl p-6 border border-border hover:glow-amber transition-shadow duration-300"
+          >
+            <div
+              class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4"
+            >
+              <i data-lucide="trending-up" class="w-6 h-6 text-primary"></i>
+            </div>
+
+            <h3
+              class="font-display text-lg font-semibold text-card-foreground mb-2"
+            >
+              Entrepreneurship
+            </h3>
+
+            <p class="text-muted-foreground text-sm leading-relaxed">
+              We preserve the power and dynamics of local business.
+            </p>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="value-card opacity-0 translate-y-8 bg-card rounded-xl p-6 border border-border hover:glow-amber transition-shadow duration-300"
+          >
+            <div
+              class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4"
+            >
+              <i data-lucide="handshake" class="w-6 h-6 text-primary"></i>
+            </div>
+
+            <h3
+              class="font-display text-lg font-semibold text-card-foreground mb-2"
+            >
+              Collaboration
+            </h3>
+
+            <p class="text-muted-foreground text-sm leading-relaxed">
+              We leverage each other's experiences and strengths.
+            </p>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="value-card opacity-0 translate-y-8 bg-card rounded-xl p-6 border border-border hover:glow-amber transition-shadow duration-300"
+          >
+            <div
+              class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4"
+            >
+              <i data-lucide="award" class="w-6 h-6 text-primary"></i>
+            </div>
+
+            <h3
+              class="font-display text-lg font-semibold text-card-foreground mb-2"
+            >
+              Quality
+            </h3>
+
+            <p class="text-muted-foreground text-sm leading-relaxed">
+              We offer the best possible service to our customers.
+            </p>
+          </div>
+
+          <!-- Card 4 -->
+          <div
+            class="value-card opacity-0 translate-y-8 bg-card rounded-xl p-6 border border-border hover:glow-amber transition-shadow duration-300"
+          >
+            <div
+              class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4"
+            >
+              <i data-lucide="users" class="w-6 h-6 text-primary"></i>
+            </div>
+
+            <h3
+              class="font-display text-lg font-semibold text-card-foreground mb-2"
+            >
+              Growth
+            </h3>
+
+            <p class="text-muted-foreground text-sm leading-relaxed">
+              We build shared value through long-term development.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="py-24 bg-background scroll-mt-20">
+      <div class="container max-w-4xl">
+        <!-- Animated Wrapper -->
+        <div
+          id="about-content"
+          class="opacity-0 translate-y-8 transition-all duration-700 ease-out"
+        >
+          <!-- Label -->
+          <span
+            class="text-primary font-semibold text-sm tracking-widest uppercase"
+          >
+            About us
+          </span>
+
+          <!-- Title -->
+          <h2
+            class="font-display text-3xl md:text-5xl font-bold text-foreground mt-3 mb-8"
+          >
+            What is Däckverket?
+          </h2>
+
+          <!-- Quote Card -->
+          <div class="bg-card rounded-xl p-6 md:p-8 border border-border mb-10">
+            <!-- Quote Icon -->
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="w-6 h-6"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-quote w-8 h-8 text-primary/40 mb-3"
+            >
+              <path
+                d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"
+              ></path>
+              <path
+                d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"
+              ></path>
+            </svg>
+
+            <!-- Quote -->
+            <blockquote
+              class="text-lg md:text-xl italic text-foreground/80 leading-relaxed"
+            >
+              "It has been important for me to continue running my business
+              operationally, while receiving support and working together on
+              ownership matters as a co-owner in Däckverket."
+            </blockquote>
+
+            <!-- Author -->
+            <p class="mt-4 text-sm text-muted-foreground font-medium">
+              — Pelle Eriksson, Tälje Däckservice
+            </p>
+          </div>
+
+          <!-- Subtitle -->
+          <h3 class="font-display text-xl font-semibold text-foreground mb-4">
+            We believe in the power of entrepreneurship
+          </h3>
+
+          <!-- Paragraphs -->
+          <div class="space-y-4 text-muted-foreground leading-relaxed">
+            <p>
+              Däckverket is an ownership group of committed entrepreneurs
+              operating high-quality, well-managed tire workshops across Sweden.
+              As entrepreneurs, we run our workshops autonomously while
+              collaborating to leverage each other's experience and strengths.
+            </p>
+
+            <p>
+              Däckverket is not a chain or franchise, but an ownership group
+              with great passion for entrepreneurship in the tire industry. Our
+              workshops remain free to operate independently — backed by an
+              industrial platform.
+            </p>
+
+            <p>
+              Those of us in Däckverket are active co-owners of the whole. We
+              continue to lead our workshops as usual, but with the support of
+              each other and our network of partners.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="background" class="py-24 section-dark scroll-mt-20">
+      <div class="container max-w-4xl">
+        <!-- Label -->
+        <span
+          class="text-primary font-semibold text-sm tracking-widest uppercase"
+        >
+          Background
+        </span>
+
+        <!-- Title -->
+        <h2 class="font-display text-3xl md:text-5xl font-bold mt-3 mb-8">
+          Why did we start Däckverket?
+        </h2>
+
+        <!-- Quote Card -->
+        <div
+          class="bg-secondary/50 rounded-xl p-6 md:p-8 border border-secondary-foreground/10 mb-10"
+        >
+          <!-- Quote Icon -->
+          <div class="mb-3">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-8 h-8 text-primary/40 mb-3"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -254,87 +486,142 @@
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                d="M19 9l-7 7-7-7"
+                d="M8 10h4v4H8zm0 0V6a2 2 0 012-2h2m4 6h4v4h-4zm0 0V6a2 2 0 012-2h2"
               />
             </svg>
-          </a>
+          </div>
+
+          <!-- Quote -->
+          <blockquote
+            class="text-lg md:text-xl italic leading-relaxed opacity-90"
+          >
+            This business was taken over by my father in the 70s and has been in
+            the family for 50 years. You don't want just anyone to take over.
+            That's why Däckverket was a perfect solution.
+          </blockquote>
+
+          <!-- Author -->
+          <p class="mt-4 text-sm opacity-60 font-medium">
+            — Håkan Berg, Däckarna i Mellerud
+          </p>
         </div>
-      </section>
-    </div>
 
-    <section
-  id="background"
-  class="py-24 section-dark scroll-mt-20"
->
-  <div class="container max-w-4xl">
+        <!-- Content -->
+        <div class="space-y-4 opacity-80 leading-relaxed">
+          <p>
+            We started Däckverket from a simple insight: together we are
+            stronger. Running a business long-term requires the strength of
+            being bigger — without losing the power of entrepreneurship.
+          </p>
 
-    <!-- Label -->
-    <span
-      class="text-primary font-semibold text-sm tracking-widest uppercase"
-    >
-      Background
-    </span>
+          <p>
+            Our goal is clear. We want to be the preferred choice for workshop
+            owners who think long-term locally, while also wanting to be part of
+            a shared growth journey.
+          </p>
 
-    <!-- Title -->
-    <h2
-      class="font-display text-3xl md:text-5xl font-bold mt-3 mb-8"
-    >
-      Why did we start Däckverket?
-    </h2>
-
-    <!-- Quote Card -->
-    <div
-      class="bg-secondary/50 rounded-xl p-6 md:p-8 border border-secondary-foreground/10 mb-10"
-    >
-      <!-- Quote Icon -->
-      <div class="mb-3">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="w-8 h-8 text-primary/40 mb-3"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          stroke-width="2"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M8 10h4v4H8zm0 0V6a2 2 0 012-2h2m4 6h4v4h-4zm0 0V6a2 2 0 012-2h2"
-          />
-        </svg>
+          <p>
+            The Swedish tire service market is fragmented with hundreds of
+            independent workshops and a demographic wave of generational
+            ownership shifts. That creates a unique opportunity to build a
+            leading Nordic player through organic growth and selective
+            acquisitions.
+          </p>
+        </div>
       </div>
+    </section>
 
-      <!-- Quote -->
-      <blockquote
-        class="text-lg md:text-xl italic leading-relaxed opacity-90"
+    <section id="contact" class="py-24 bg-background scroll-mt-20">
+      <div class="container max-w-2xl text-center">
+        <!-- Animated Wrapper -->
+        <div
+          id="contact-content"
+          class="opacity-0 translate-y-8 transition-all duration-700 ease-out"
+        >
+          <!-- Label -->
+          <span
+            class="text-primary font-semibold text-sm tracking-widest uppercase"
+          >
+            Contact
+          </span>
+
+          <!-- Title -->
+          <h2
+            class="ont-display text-3xl md:text-5xl font-bold text-foreground mt-3 mb-4"
+          >
+            Get in touch
+          </h2>
+
+          <!-- Description -->
+          <p class="text-muted-foreground mb-10">
+            Want to learn more about Däckverket — as a workshop owner, investor
+            or partner? Don't hesitate to reach out.
+          </p>
+
+          <!-- Buttons -->
+          <div
+            class="flex flex-col sm:flex-row items-center justify-center gap-4"
+          >
+            <!-- Email -->
+            <a
+              href="mailto:info@dackverket.se"
+              class="inline-flex items-center gap-3 bg-primary text-white px-8 py-4 rounded-xl font-semibold text-lg hover:brightness-110 transition shadow-lg"
+            >
+              <i data-lucide="mail" class="w-5 h-5"></i>
+              Send email
+            </a>
+
+            <!-- LinkedIn -->
+            <a
+              href="https://www.linkedin.com/company/dackverket/posts/?feedView=all"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-3 border border-border bg-card text-card-foreground px-8 py-4 rounded-xl font-semibold text-lg hover:border-primary/50 hover:text-primary transition shadow-lg"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-linkedin w-5 h-5"
+              >
+                <path
+                  d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                ></path>
+                <rect width="4" height="12" x="2" y="9"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+              Follow us on LinkedIn
+            </a>
+          </div>
+
+          <!-- Email Text -->
+          <p class="mt-4 text-sm text-muted-foreground">info@dackverket.se</p>
+        </div>
+      </div>
+    </section>
+    <footer class="section-dark border-t border-white/10 py-10">
+      <div
+        class="container flex flex-col md:flex-row items-center justify-between gap-4"
       >
-        This business was taken over by my father in the 70s and has been in the family for 50 years. You don't want just anyone to take over. That's why Däckverket was a perfect solution.
-      </blockquote>
+        <div class="flex items-center gap-3">
+          <img
+            src="./images/logo.png"
+            alt="Däckverket"
+            class="h-7 opacity-90"
+          />
+        </div>
 
-      <!-- Author -->
-      <p class="mt-4 text-sm opacity-60 font-medium">
-       — Håkan Berg, Däckarna i Mellerud
-      </p>
-    </div>
-
-    <!-- Content -->
-    <div class="space-y-4 opacity-80 leading-relaxed">
-      <p>
-       We started Däckverket from a simple insight: together we are stronger. Running a business long-term requires the strength of being bigger — without losing the power of entrepreneurship.
-      </p>
-
-      <p>
-        Our goal is clear. We want to be the preferred choice for workshop owners who think long-term locally, while also wanting to be part of a shared growth journey.
-      </p>
-
-      <p>
-        The Swedish tire service market is fragmented with hundreds of independent workshops and a demographic wave of generational ownership shifts. That creates a unique opportunity to build a leading Nordic player through organic growth and selective acquisitions.
-      </p>
-    </div>
-
-  </div>
-</section>
-
+        <p class="text-sm opacity-40">
+          © 2026 Däckverket. All rights reserved.
+        </p>
+      </div>
+    </footer>
 
     <script src="main.js"></script>
     <script>
@@ -385,4 +672,52 @@
       scroll.style.transition = "opacity 0.8s ease";
     }, 1200);
   });
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.remove("opacity-0", "translate-y-8");
+          entry.target.classList.add("opacity-100", "translate-y-0");
+        }
+      });
+    },
+    { threshold: 0.2 },
+  );
+
+  observer.observe(document.getElementById("contact-content"));
+
+  const valueCards = document.querySelectorAll(".value-card");
+
+  const valueObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.remove("opacity-0", "translate-y-8");
+            entry.target.classList.add("opacity-100", "translate-y-0");
+            entry.target.style.transition =
+              "all 0.7s cubic-bezier(0.22, 1, 0.36, 1)";
+          }, index * 100);
+        }
+      });
+    },
+    { threshold: 0.2 },
+  );
+
+  valueCards.forEach((card) => valueObserver.observe(card));
+
+  const aboutObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.remove("opacity-0", "translate-y-8");
+          entry.target.classList.add("opacity-100", "translate-y-0");
+        }
+      });
+    },
+    { threshold: 0.2 },
+  );
+
+  aboutObserver.observe(document.getElementById("about-content"));
 </script>
