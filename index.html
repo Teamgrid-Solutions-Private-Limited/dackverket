@@ -6,137 +6,383 @@
     <title>Tailwind Setup</title>
 
     <link rel="stylesheet" href="./src/output.css" />
+    <script src="https://unpkg.com/lucide@latest"></script>
   </head>
   <body class="">
     <nav
-    class="fixed top-0 left-0 right-0 z-50 bg-secondary/95 backdrop-blur-md border-b border-secondary-foreground/10"
-  >
-    <div class="container flex items-center justify-between h-16 md:h-20">
-
-      <!-- Logo -->
-      <button onclick="goHome()" class="flex items-center gap-2">
-        <img src="./images/logo.png" alt="Logo" class="h-8 md:h-10" />
-      </button>
-
-      <!-- Desktop Menu -->
-      <div class="hidden md:flex items-center gap-8">
-
-        <button onclick="scrollToSection('#about')"
-          class="text-secondary-foreground/80 hover:text-primary transition-colors text-sm font-medium tracking-wide">
-          About us
-        </button>
-
-        <button onclick="scrollToSection('#background')"
-          class="text-secondary-foreground/80 hover:text-primary transition-colors text-sm font-medium tracking-wide">
-          Background
-        </button>
-
-        <button onclick="scrollToSection('#team')"
-          class="text-secondary-foreground/80 hover:text-primary transition-colors text-sm font-medium tracking-wide">
-          Team
-        </button>
-
-        <button onclick="scrollToSection('#workshops')"
-          class="text-secondary-foreground/80 hover:text-primary transition-colors text-sm font-medium tracking-wide">
-          Workshops
-        </button>
-
-        <button onclick="scrollToSection('#press')"
-          class="text-secondary-foreground/80 hover:text-primary transition-colors text-sm font-medium tracking-wide">
-          Press
-        </button>
-
-        <!-- Contact Button -->
-        <button
-          onclick="scrollToSection('#contact')"
-          class="bg-primary text-primary-foreground px-5 py-2.5 rounded-lg text-sm font-semibold hover:brightness-110 transition"
-        >
-          Contact
-        </button>
-
-        <!-- Language Button -->
-        <button
-          onclick="toggleLanguage()"
-          class="flex items-center gap-1.5 text-secondary-foreground/70 hover:text-primary transition-colors text-sm"
-        >
-          <i data-lucide="globe" class="w-4 h-4"></i>
-          <span id="desktop-lang">EN</span>
-        </button>
-      </div>
-
-      <!-- Mobile Buttons -->
-      <div class="flex md:hidden items-center gap-3">
-
-        <button
-          onclick="toggleLanguage()"
-          class="text-secondary-foreground/70 hover:text-primary"
-        >
-          <i data-lucide="globe" class="w-5 h-5"></i>
-        </button>
-
-        <button
-          onclick="toggleMobileMenu()"
-          class="text-secondary-foreground"
-        >
-          <i data-lucide="menu" id="menuIcon" class="w-6 h-6"></i>
-        </button>
-
-      </div>
-    </div>
-
-    <!-- Mobile Menu -->
-    <div
-      id="mobileMenu"
-      class="md:hidden bg-secondary border-t border-secondary-foreground/10 overflow-hidden"
+      class="fixed top-0 left-0 right-0 z-50 bg-secondary/95 backdrop-blur-md border-b border-secondary-foreground/10"
     >
-      <div class="container py-4 flex flex-col gap-3">
-
-        <button onclick="scrollToSection('#about')"
-          class="text-secondary-foreground/80 hover:text-primary py-2 text-left text-base">
-          About us
+      <div class="container flex items-center justify-between h-16 md:h-20">
+        <!-- Logo -->
+        <button onclick="goHome()" class="flex items-center gap-2">
+          <img src="./images/logo.png" alt="Logo" class="h-8 md:h-10" />
         </button>
 
-        <button onclick="scrollToSection('#background')"
-          class="text-secondary-foreground/80 hover:text-primary py-2 text-left text-base">
-          Background
-        </button>
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center gap-8">
+          <button
+            onclick="scrollToSection('#about')"
+            class="text-secondary-foreground/80 hover:text-primary transition-colors text-sm font-medium tracking-wide"
+          >
+            About
+          </button>
 
-        <button onclick="scrollToSection('#team')"
-          class="text-secondary-foreground/80 hover:text-primary py-2 text-left text-base">
-          Team
-        </button>
+          <button
+            onclick="scrollToSection('#background')"
+            class="text-secondary-foreground/80 hover:text-primary transition-colors text-sm font-medium tracking-wide"
+          >
+            Background
+          </button>
 
-        <button onclick="scrollToSection('#workshops')"
-          class="text-secondary-foreground/80 hover:text-primary py-2 text-left text-base">
-          Workshops
-        </button>
+          <button
+            onclick="scrollToSection('#team')"
+            class="text-secondary-foreground/80 hover:text-primary transition-colors text-sm font-medium tracking-wide"
+          >
+            Team
+          </button>
 
-        <button onclick="scrollToSection('#press')"
-          class="text-secondary-foreground/80 hover:text-primary py-2 text-left text-base">
-          Press
-        </button>
+          <button
+            onclick="scrollToSection('#workshops')"
+            class="text-secondary-foreground/80 hover:text-primary transition-colors text-sm font-medium tracking-wide"
+          >
+            Workshops
+          </button>
 
-        <button
-          onclick="scrollToSection('#contact')"
-          class="bg-primary text-primary-foreground px-5 py-2.5 rounded-lg text-sm font-semibold w-fit"
-        >
-          Contact
-        </button>
+          <button
+            onclick="scrollToSection('#press')"
+            class="text-secondary-foreground/80 hover:text-primary transition-colors text-sm font-medium tracking-wide"
+          >
+            Press
+          </button>
 
+          <!-- Contact Button -->
+          <button
+            onclick="scrollToSection('#contact')"
+            class="bg-primary text-primary-foreground px-5 py-2.5 rounded-lg text-sm font-semibold hover:brightness-110 transition"
+          >
+            Contact
+          </button>
+
+          <!-- Language Button -->
+          <button
+            onclick="toggleLanguage()"
+            class="flex items-center gap-1.5 text-secondary-foreground/70 hover:text-primary transition-colors text-sm"
+          >
+            <i data-lucide="globe" class="w-4 h-4"></i>
+            <span id="desktop-lang">SV</span>
+          </button>
+        </div>
+
+        <!-- Mobile Buttons -->
+        <div class="flex md:hidden items-center gap-3">
+          <button
+            onclick="toggleLanguage()"
+            class="text-secondary-foreground/70 hover:text-primary"
+          >
+            <i data-lucide="globe" class="w-5 h-5"></i>
+          </button>
+
+          <button
+            onclick="toggleMobileMenu()"
+            class="text-secondary-foreground"
+          >
+            <i data-lucide="menu" id="menuIcon" class="w-6 h-6"></i>
+          </button>
+        </div>
       </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobileMenu"
+        class="md:hidden bg-secondary border-t border-secondary-foreground/10 overflow-hidden"
+      >
+        <div class="container py-4 flex flex-col gap-3">
+          <button
+            onclick="scrollToSection('#about')"
+            class="text-secondary-foreground/80 hover:text-primary py-2 text-left text-base"
+          >
+            About us
+          </button>
+
+          <button
+            onclick="scrollToSection('#background')"
+            class="text-secondary-foreground/80 hover:text-primary py-2 text-left text-base"
+          >
+            Background
+          </button>
+
+          <button
+            onclick="scrollToSection('#team')"
+            class="text-secondary-foreground/80 hover:text-primary py-2 text-left text-base"
+          >
+            Team
+          </button>
+
+          <button
+            onclick="scrollToSection('#workshops')"
+            class="text-secondary-foreground/80 hover:text-primary py-2 text-left text-base"
+          >
+            Workshops
+          </button>
+
+          <button
+            onclick="scrollToSection('#press')"
+            class="text-secondary-foreground/80 hover:text-primary py-2 text-left text-base"
+          >
+            Press
+          </button>
+
+          <button
+            onclick="scrollToSection('#contact')"
+            class="bg-primary text-primary-foreground px-5 py-2.5 rounded-lg text-sm font-semibold w-fit"
+          >
+            Contact
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="min-h-screen bg-black text-white">
+      <section
+        class="relative min-h-screen flex items-center justify-center overflow-hidden"
+      >
+        <!-- Background image -->
+        <div
+          class="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style="background-image: url(&quot;./images/hero-bg.jpg&quot;)"
+        ></div>
+
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-black/55"></div>
+
+        <!-- Content -->
+        <div class="relative z-10 container mx-auto text-center px-4 pt-20">
+          <!-- Heading -->
+          <h1
+            class="hero-title font-bold text-white text-4xl md:text-6xl lg:text-7xl max-w-4xl mx-auto leading-tight opacity-0 translate-y-10"
+          >
+            Empowering Global Innovation Through Strategic Partnerships
+          </h1>
+
+          <!-- Subtitle -->
+          <p
+            class="hero-subtitle mt-6 text-lg md:text-xl text-white/70 max-w-2xl mx-auto opacity-0 translate-y-8"
+          >
+            We help businesses expand across regions, accelerate growth, and
+            build lasting impact worldwide.
+          </p>
+
+          <!-- Buttons -->
+          <div
+            class="hero-buttons mt-10 flex flex-col sm:flex-row gap-4 justify-center opacity-0 translate-y-5"
+          >
+            <a
+              href="#contact"
+              class="bg-blue-600 text-white px-8 py-3.5 rounded-lg font-semibold text-base hover:brightness-110 transition shadow-lg"
+            >
+              Get Started
+            </a>
+
+            <a
+              href="#about"
+              class="border border-white/30 text-white px-8 py-3.5 rounded-lg font-medium text-base hover:bg-white/10 transition"
+            >
+              Learn More
+            </a>
+          </div>
+
+          <!-- Stats -->
+          <div
+            class="hero-stats mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto border-t border-white/10 pt-10 opacity-0 translate-y-5"
+          >
+            <div class="text-center">
+              <div class="text-3xl md:text-4xl font-bold text-blue-500">16</div>
+              <div
+                class="text-xs md:text-sm uppercase tracking-wider text-white/60 mt-1"
+              >
+                Workshops
+              </div>
+            </div>
+
+            <div class="text-center">
+              <div class="text-3xl md:text-4xl font-bold text-blue-500">9</div>
+              <div
+                class="text-xs md:text-sm uppercase tracking-wider text-white/60 mt-1"
+              >
+                Regions
+              </div>
+            </div>
+
+            <div class="text-center">
+              <div class="text-3xl md:text-4xl font-bold text-blue-500">15</div>
+              <div
+                class="text-xs md:text-sm uppercase tracking-wider text-white/60 mt-1"
+              >
+                Acquisitions
+              </div>
+            </div>
+
+            <div class="text-center">
+              <div class="text-3xl md:text-4xl font-bold text-blue-500">
+                2024
+              </div>
+              <div
+                class="text-xs md:text-sm uppercase tracking-wider text-white/60 mt-1"
+              >
+                Founded
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scroll Down -->
+        <div
+          class="scroll-indicator absolute bottom-8 left-1/2 -translate-x-1/2 opacity-0"
+        >
+          <a
+            href="#about"
+            class="text-white/50 hover:text-blue-500 transition animate-bounce"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-6 h-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </a>
+        </div>
+      </section>
     </div>
-  </nav>
 
-  <!-- Dummy Sections -->
-  <section id="about" class="h-screen pt-32 px-5">About Section</section>
-  <section id="background" class="h-screen px-5">Background Section</section>
-  <section id="team" class="h-screen px-5">Team Section</section>
-  <section id="workshops" class="h-screen px-5">Workshops Section</section>
-  <section id="press" class="h-screen px-5">Press Section</section>
-  <section id="contact" class="h-screen px-5">Contact Section</section>
+    <section
+  id="background"
+  class="py-24 section-dark scroll-mt-20"
+>
+  <div class="container max-w-4xl">
+
+    <!-- Label -->
+    <span
+      class="text-primary font-semibold text-sm tracking-widest uppercase"
+    >
+      Background
+    </span>
+
+    <!-- Title -->
+    <h2
+      class="font-display text-3xl md:text-5xl font-bold mt-3 mb-8"
+    >
+      Why did we start Däckverket?
+    </h2>
+
+    <!-- Quote Card -->
+    <div
+      class="bg-secondary/50 rounded-xl p-6 md:p-8 border border-secondary-foreground/10 mb-10"
+    >
+      <!-- Quote Icon -->
+      <div class="mb-3">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-8 h-8 text-primary/40 mb-3"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M8 10h4v4H8zm0 0V6a2 2 0 012-2h2m4 6h4v4h-4zm0 0V6a2 2 0 012-2h2"
+          />
+        </svg>
+      </div>
+
+      <!-- Quote -->
+      <blockquote
+        class="text-lg md:text-xl italic leading-relaxed opacity-90"
+      >
+        This business was taken over by my father in the 70s and has been in the family for 50 years. You don't want just anyone to take over. That's why Däckverket was a perfect solution.
+      </blockquote>
+
+      <!-- Author -->
+      <p class="mt-4 text-sm opacity-60 font-medium">
+       — Håkan Berg, Däckarna i Mellerud
+      </p>
+    </div>
+
+    <!-- Content -->
+    <div class="space-y-4 opacity-80 leading-relaxed">
+      <p>
+       We started Däckverket from a simple insight: together we are stronger. Running a business long-term requires the strength of being bigger — without losing the power of entrepreneurship.
+      </p>
+
+      <p>
+        Our goal is clear. We want to be the preferred choice for workshop owners who think long-term locally, while also wanting to be part of a shared growth journey.
+      </p>
+
+      <p>
+        The Swedish tire service market is fragmented with hundreds of independent workshops and a demographic wave of generational ownership shifts. That creates a unique opportunity to build a leading Nordic player through organic growth and selective acquisitions.
+      </p>
+    </div>
+
+  </div>
+</section>
 
 
-
-   <script src="main.js"></script>
+    <script src="main.js"></script>
+    <script>
+      lucide.createIcons();
+    </script>
   </body>
 </html>
+
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    // Hero title
+    setTimeout(() => {
+      const title = document.querySelector(".hero-title");
+      title.classList.remove("opacity-0", "translate-y-10");
+      title.classList.add("opacity-100", "translate-y-0");
+      title.style.transition = "all 0.8s ease-out";
+    }, 100);
+
+    // Subtitle
+    setTimeout(() => {
+      const subtitle = document.querySelector(".hero-subtitle");
+      subtitle.classList.remove("opacity-0", "translate-y-8");
+      subtitle.classList.add("opacity-100", "translate-y-0");
+      subtitle.style.transition = "all 0.8s ease-out";
+    }, 300);
+
+    // Buttons
+    setTimeout(() => {
+      const buttons = document.querySelector(".hero-buttons");
+      buttons.classList.remove("opacity-0", "translate-y-5");
+      buttons.classList.add("opacity-100", "translate-y-0");
+      buttons.style.transition = "all 0.6s ease-out";
+    }, 600);
+
+    // Stats
+    setTimeout(() => {
+      const stats = document.querySelector(".hero-stats");
+      stats.classList.remove("opacity-0", "translate-y-5");
+      stats.classList.add("opacity-100", "translate-y-0");
+      stats.style.transition = "all 0.8s ease-out";
+    }, 900);
+
+    // Scroll indicator
+    setTimeout(() => {
+      const scroll = document.querySelector(".scroll-indicator");
+      scroll.classList.remove("opacity-0");
+      scroll.classList.add("opacity-100");
+      scroll.style.transition = "opacity 0.8s ease";
+    }, 1200);
+  });
+</script>
