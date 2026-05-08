@@ -3,154 +3,290 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tailwind Setup</title>
+    <title>Lovable App</title>
 
     <link rel="stylesheet" href="./src/output.css" />
+    <script src="https://unpkg.com/lucide@latest"></script>
   </head>
-  <body class="bg-background text-foreground">
-    <div class="min-h-screen bg-black text-white">
-      <section
-        class="relative min-h-screen flex items-center justify-center overflow-hidden"
-      >
-        <!-- Background image -->
-        <div
-          class="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style="background-image: url(&quot;/images/hero-bg.jpg&quot;)"
-        ></div>
+  <body class="scroll-smooth">
+    <!-- NAVBAR -->
+    <nav
+      class="fixed top-0 left-0 right-0 z-50 bg-secondary/95 backdrop-blur-md border-b border-secondary-foreground/10"
+    >
+      <div class="container flex items-center justify-between h-16 md:h-20">
+        <!-- Logo -->
+        <button onclick="goHome()" class="flex items-center gap-2">
+          <img src="./images/logo.png" alt="Logo" class="h-8 md:h-10" />
+        </button>
 
-        <!-- Overlay -->
-        <div class="absolute inset-0 bg-black/55"></div>
-
-        <!-- Content -->
-        <div class="relative z-10 container mx-auto text-center px-4 pt-20">
-          <!-- Heading -->
-          <h1
-            class="hero-title font-bold text-white text-4xl md:text-6xl lg:text-7xl max-w-4xl mx-auto leading-tight opacity-0 translate-y-10"
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center gap-8">
+          <button
+            onclick="scrollToSection('#about')"
+            class="text-secondary-foreground/80 hover:text-primary transition-colors text-sm font-medium tracking-wide"
           >
-            Empowering Global Innovation Through Strategic Partnerships
-          </h1>
+            About
+          </button>
 
-          <!-- Subtitle -->
-          <p
-            class="hero-subtitle mt-6 text-lg md:text-xl text-white/70 max-w-2xl mx-auto opacity-0 translate-y-8"
+          <button
+            onclick="scrollToSection('#background')"
+            class="text-secondary-foreground/80 hover:text-primary transition-colors text-sm font-medium tracking-wide"
           >
-            We help businesses expand across regions, accelerate growth, and
-            build lasting impact worldwide.
-          </p>
+            Background
+          </button>
 
-          <!-- Buttons -->
-          <div
-            class="hero-buttons mt-10 flex flex-col sm:flex-row gap-4 justify-center opacity-0 translate-y-5"
+          <button
+            onclick="scrollToSection('#team')"
+            class="text-secondary-foreground/80 hover:text-primary transition-colors text-sm font-medium tracking-wide"
           >
-            <a
-              href="#contact"
-              class="bg-blue-600 text-white px-8 py-3.5 rounded-lg font-semibold text-base hover:brightness-110 transition shadow-lg"
-            >
-              Get Started
-            </a>
+            Team
+          </button>
 
-            <a
-              href="#about"
-              class="border border-white/30 text-white px-8 py-3.5 rounded-lg font-medium text-base hover:bg-white/10 transition"
-            >
-              Learn More
-            </a>
-          </div>
-
-          <!-- Stats -->
-          <div
-            class="hero-stats mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto border-t border-white/10 pt-10 opacity-0 translate-y-5"
+          <button
+            onclick="scrollToSection('#workshops')"
+            class="text-secondary-foreground/80 hover:text-primary transition-colors text-sm font-medium tracking-wide"
           >
-            <div class="text-center">
-              <div class="text-3xl md:text-4xl font-bold text-blue-500">16</div>
-              <div
-                class="text-xs md:text-sm uppercase tracking-wider text-white/60 mt-1"
-              >
-                Workshops
-              </div>
-            </div>
+            Workshops
+          </button>
 
-            <div class="text-center">
-              <div class="text-3xl md:text-4xl font-bold text-blue-500">9</div>
-              <div
-                class="text-xs md:text-sm uppercase tracking-wider text-white/60 mt-1"
-              >
-                Regions
-              </div>
-            </div>
+          <button
+            onclick="scrollToSection('#press')"
+            class="text-secondary-foreground/80 hover:text-primary transition-colors text-sm font-medium tracking-wide"
+          >
+            Press
+          </button>
 
-            <div class="text-center">
-              <div class="text-3xl md:text-4xl font-bold text-blue-500">15</div>
-              <div
-                class="text-xs md:text-sm uppercase tracking-wider text-white/60 mt-1"
-              >
-                Acquisitions
-              </div>
-            </div>
+          <!-- Contact Button -->
+          <button
+            onclick="scrollToSection('#contact')"
+            class="bg-primary text-primary-foreground px-5 py-2.5 rounded-lg text-sm font-semibold hover:brightness-110 transition"
+          >
+            Contact
+          </button>
 
-            <div class="text-center">
-              <div class="text-3xl md:text-4xl font-bold text-blue-500">
-                2024
-              </div>
-              <div
-                class="text-xs md:text-sm uppercase tracking-wider text-white/60 mt-1"
-              >
-                Founded
-              </div>
-            </div>
-          </div>
+          <!-- Language Button -->
+          <button
+            onclick="toggleLanguage()"
+            class="flex items-center gap-1.5 text-secondary-foreground/70 hover:text-primary transition-colors text-sm"
+          >
+            <i data-lucide="globe" class="w-4 h-4"></i>
+            <span id="desktop-lang">SV</span>
+          </button>
         </div>
 
-        <!-- Scroll Down -->
+        <!-- Mobile Buttons -->
+        <div class="flex md:hidden items-center gap-3">
+          <button
+            onclick="toggleLanguage()"
+            class="text-secondary-foreground/70 hover:text-primary"
+          >
+            <i data-lucide="globe" class="w-5 h-5"></i>
+          </button>
+
+          <button
+            onclick="toggleMobileMenu()"
+            class="text-secondary-foreground"
+          >
+            <i data-lucide="menu" id="menuIcon" class="w-6 h-6"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobileMenu"
+        class="md:hidden bg-secondary border-t border-secondary-foreground/10 overflow-hidden"
+      >
+        <div class="container py-4 flex flex-col gap-3">
+          <button
+            onclick="scrollToSection('#about')"
+            class="text-secondary-foreground/80 hover:text-primary py-2 text-left text-base"
+          >
+            About us
+          </button>
+
+          <button
+            onclick="scrollToSection('#background')"
+            class="text-secondary-foreground/80 hover:text-primary py-2 text-left text-base"
+          >
+            Background
+          </button>
+
+          <button
+            onclick="scrollToSection('#team')"
+            class="text-secondary-foreground/80 hover:text-primary py-2 text-left text-base"
+          >
+            Team
+          </button>
+
+          <button
+            onclick="scrollToSection('#workshops')"
+            class="text-secondary-foreground/80 hover:text-primary py-2 text-left text-base"
+          >
+            Workshops
+          </button>
+
+          <button
+            onclick="scrollToSection('#press')"
+            class="text-secondary-foreground/80 hover:text-primary py-2 text-left text-base"
+          >
+            Press
+          </button>
+
+          <button
+            onclick="scrollToSection('#contact')"
+            class="bg-primary text-primary-foreground px-5 py-2.5 rounded-lg text-sm font-semibold w-fit"
+          >
+            Contact
+          </button>
+        </div>
+      </div>
+    </nav>
+    <!-- HERO SECTION -->
+    <section
+      class="relative min-h-screen flex items-center justify-center overflow-hidden"
+    >
+      <!-- Background image -->
+      <div
+        class="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style="background-image: url(&quot;./images/hero-bg.jpg&quot;)"
+      ></div>
+
+      <!-- Overlay -->
+      <div class="absolute inset-0 hero-overlay"></div>
+
+      <!-- Content -->
+      <div class="relative z-10 container mx-auto text-center px-4 pt-20">
+        <!-- Heading -->
+        <h1
+          class="hero-title font-bold text-white text-4xl md:text-6xl lg:text-7xl max-w-4xl mx-auto leading-tight opacity-0 translate-y-10"
+        >
+          Building Sweden's leading ownership platform for tire service
+        </h1>
+
+        <!-- Subtitle -->
+        <p
+          class="hero-subtitle mt-6 text-lg md:text-xl text-white/70 max-w-2xl mx-auto opacity-0 translate-y-8"
+        >
+          A platform where experienced entrepreneurs continue to run their
+          workshops — with the power of a shared growth journey.
+        </p>
+
+        <!-- Buttons -->
         <div
-          class="scroll-indicator absolute bottom-8 left-1/2 -translate-x-1/2 opacity-0"
+          class="hero-buttons mt-10 flex flex-col sm:flex-row gap-4 justify-center opacity-0 translate-y-5"
         >
           <a
-            href="#about"
-            class="text-white/50 hover:text-blue-500 transition animate-bounce"
+            href="#contact"
+            class="bg-primary text-primary-foreground px-8 py-3.5 rounded-lg font-semibold text-base hover:brightness-110 transition shadow-lg"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="w-6 h-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M19 9l-7 7-7-7"
-              />
-            </svg>
+            Contact us
+          </a>
+
+          <a
+            href="#about"
+            class="border border-section-dark-fg/30 text-section-dark-fg px-8 py-3.5 rounded-lg font-medium text-base hover:bg-section-dark-fg/10 transition"
+          >
+            Learn more
           </a>
         </div>
-      </section>
-    </div>
+
+        <!-- Stats -->
+        <div
+          class="hero-stats mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto border-t border-white/10 pt-10 opacity-0 translate-y-5"
+        >
+          <div class="text-center">
+            <div
+              class="font-display text-3xl md:text-4xl font-bold text-primary"
+            >
+              16
+            </div>
+            <div
+              class="text-xs md:text-sm uppercase tracking-wider text-white/60 mt-1"
+            >
+              Workshops
+            </div>
+          </div>
+
+          <div class="text-center">
+            <div
+              class="font-display text-3xl md:text-4xl font-bold text-primary"
+            >
+              9
+            </div>
+            <div
+              class="text-xs md:text-sm uppercase tracking-wider text-white/60 mt-1"
+            >
+              Swedish counties
+            </div>
+          </div>
+
+          <div class="text-center">
+            <div
+              class="font-display text-3xl md:text-4xl font-bold text-primary"
+            >
+              15
+            </div>
+            <div
+              class="text-xs md:text-sm uppercase tracking-wider text-white/60 mt-1"
+            >
+              Acquisitions completed
+            </div>
+          </div>
+
+          <div class="text-center">
+            <div
+              class="font-display text-3xl md:text-4xl font-bold text-primary"
+            >
+              2024
+            </div>
+            <div
+              class="text-xs md:text-sm uppercase tracking-wider text-white/60 mt-1"
+            >
+              Founded
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Down -->
+      <div
+        class="scroll-indicator absolute bottom-8 left-1/2 -translate-x-1/2 opacity-0"
+      >
+        <a
+          href="#about"
+          class="text-white/50 hover:text-[#EE862B] transition animate-bounce"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-arrow-down w-6 h-6"
+          >
+            <path d="M12 5v14"></path>
+            <path d="m19 12-7 7-7-7"></path>
+          </svg>
+        </a>
+      </div>
+    </section>
+    <!-- VALUE SECTION -->
     <section class="py-20 bg-background">
       <div class="container">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Card 1 -->
           <div
-            class="value-card bg-card rounded-xl p-6 border border-border hover:glow-amber transition-shadow duration-300 opacity-0 translate-y-10"
+            class="value-card opacity-0 translate-y-8 bg-card rounded-xl p-6 border border-border hover:glow-amber transition-shadow duration-300"
           >
             <div
               class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-trending-up w-6 h-6 text-primary"
-              >
-                <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
-                <polyline points="16 7 22 7 22 13"></polyline>
-              </svg>
+              <i data-lucide="trending-up" class="w-6 h-6 text-primary"></i>
             </div>
 
             <h3
@@ -164,32 +300,14 @@
             </p>
           </div>
 
+          <!-- Card 2 -->
           <div
-            class="value-card bg-card rounded-xl p-6 border border-border hover:glow-amber transition-shadow duration-300 opacity-0 translate-y-10"
+            class="value-card opacity-0 translate-y-8 bg-card rounded-xl p-6 border border-border hover:glow-amber transition-shadow duration-300"
           >
             <div
               class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-handshake w-6 h-6 text-primary"
-              >
-                <path d="m11 17 2 2a1 1 0 1 0 3-3"></path>
-                <path
-                  d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"
-                ></path>
-                <path d="m21 3 1 11h-2"></path>
-                <path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"></path>
-                <path d="M3 4h8"></path>
-              </svg>
+              <i data-lucide="handshake" class="w-6 h-6 text-primary"></i>
             </div>
 
             <h3
@@ -203,29 +321,14 @@
             </p>
           </div>
 
+          <!-- Card 3 -->
           <div
-            class="value-card bg-card rounded-xl p-6 border border-border hover:glow-amber transition-shadow duration-300 opacity-0 translate-y-10"
+            class="value-card opacity-0 translate-y-8 bg-card rounded-xl p-6 border border-border hover:glow-amber transition-shadow duration-300"
           >
             <div
               class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-award w-6 h-6 text-primary"
-              >
-                <path
-                  d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"
-                ></path>
-                <circle cx="12" cy="8" r="6"></circle>
-              </svg>
+              <i data-lucide="award" class="w-6 h-6 text-primary"></i>
             </div>
 
             <h3
@@ -239,29 +342,14 @@
             </p>
           </div>
 
+          <!-- Card 4 -->
           <div
-            class="value-card bg-card rounded-xl p-6 border border-border hover:glow-amber transition-shadow duration-300 opacity-0 translate-y-10"
+            class="value-card opacity-0 translate-y-8 bg-card rounded-xl p-6 border border-border hover:glow-amber transition-shadow duration-300"
           >
             <div
               class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-users w-6 h-6 text-primary"
-              >
-                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                <circle cx="9" cy="7" r="4"></circle>
-                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-              </svg>
+              <i data-lucide="users" class="w-6 h-6 text-primary"></i>
             </div>
 
             <h3
@@ -277,19 +365,31 @@
         </div>
       </div>
     </section>
+    <!-- ABOUT SECTION -->
     <section id="about" class="py-24 bg-background scroll-mt-20">
       <div class="container max-w-4xl">
-        <div class="about-content opacity-0 translate-y-10">
+        <!-- Animated Wrapper -->
+        <div
+          id="about-content"
+          class="opacity-0 translate-y-8 transition-all duration-700 ease-out"
+        >
+          <!-- Label -->
           <span
             class="text-primary font-semibold text-sm tracking-widest uppercase"
-            >About us</span
           >
+            About us
+          </span>
+
+          <!-- Title -->
           <h2
             class="font-display text-3xl md:text-5xl font-bold text-foreground mt-3 mb-8"
           >
             What is Däckverket?
           </h2>
+
+          <!-- Quote Card -->
           <div class="bg-card rounded-xl p-6 md:p-8 border border-border mb-10">
+            <!-- Quote Icon -->
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -309,6 +409,8 @@
                 d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"
               ></path>
             </svg>
+
+            <!-- Quote -->
             <blockquote
               class="text-lg md:text-xl italic text-foreground/80 leading-relaxed"
             >
@@ -316,13 +418,19 @@
               operationally, while receiving support and working together on
               ownership matters as a co-owner in Däckverket."
             </blockquote>
+
+            <!-- Author -->
             <p class="mt-4 text-sm text-muted-foreground font-medium">
               — Pelle Eriksson, Tälje Däckservice
             </p>
           </div>
+
+          <!-- Subtitle -->
           <h3 class="font-display text-xl font-semibold text-foreground mb-4">
             We believe in the power of entrepreneurship
           </h3>
+
+          <!-- Paragraphs -->
           <div class="space-y-4 text-muted-foreground leading-relaxed">
             <p>
               Däckverket is an ownership group of committed entrepreneurs
@@ -345,6 +453,88 @@
         </div>
       </div>
     </section>
+    <!-- BACKGROUND SECTION -->
+    <section id="background" class="py-24 section-dark scroll-mt-20">
+      <div class="container max-w-4xl">
+        <!-- Label -->
+        <span
+          class="text-primary font-semibold text-sm tracking-widest uppercase"
+        >
+          Background
+        </span>
+
+        <!-- Title -->
+        <h2 class="font-display text-3xl md:text-5xl font-bold mt-3 mb-8">
+          Why did we start Däckverket?
+        </h2>
+
+        <!-- Quote Card -->
+        <div
+          class="bg-secondary/50 rounded-xl p-6 md:p-8 border border-secondary-foreground/10 mb-10"
+        >
+          <!-- Quote Icon -->
+          <div class="mb-3">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-quote w-8 h-8 text-primary/40 mb-3"
+            >
+              <path
+                d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"
+              ></path>
+              <path
+                d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"
+              ></path>
+            </svg>
+          </div>
+
+          <!-- Quote -->
+          <blockquote
+            class="text-lg md:text-xl italic leading-relaxed opacity-90"
+          >
+            This business was taken over by my father in the 70s and has been in
+            the family for 50 years. You don't want just anyone to take over.
+            That's why Däckverket was a perfect solution.
+          </blockquote>
+
+          <!-- Author -->
+          <p class="mt-4 text-sm opacity-60 font-medium">
+            — Håkan Berg, Däckarna i Mellerud
+          </p>
+        </div>
+
+        <!-- Content -->
+        <div class="space-y-4 opacity-80 leading-relaxed">
+          <p>
+            We started Däckverket from a simple insight: together we are
+            stronger. Running a business long-term requires the strength of
+            being bigger — without losing the power of entrepreneurship.
+          </p>
+
+          <p>
+            Our goal is clear. We want to be the preferred choice for workshop
+            owners who think long-term locally, while also wanting to be part of
+            a shared growth journey.
+          </p>
+
+          <p>
+            The Swedish tire service market is fragmented with hundreds of
+            independent workshops and a demographic wave of generational
+            ownership shifts. That creates a unique opportunity to build a
+            leading Nordic player through organic growth and selective
+            acquisitions.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- TEAM SECTION -->
     <section id="team" class="py-24 bg-background scroll-mt-20">
       <div class="container max-w-6xl">
         <div class="team-header max-w-3xl opacity-0 translate-y-10">
@@ -355,7 +545,7 @@
           <h2
             class="font-display text-3xl md:text-5xl font-bold text-foreground mt-3 mb-8"
           >
-            Människorna bakom Däckverket
+            The people behind Däckverket
           </h2>
           <div
             class="bg-card rounded-xl p-6 md:p-8 border border-border mb-10 hover:border-primary/40 hover:glow-amber transition-all duration-300"
@@ -382,9 +572,9 @@
             <blockquote
               class="text-lg md:text-xl italic text-foreground/80 leading-relaxed"
             >
-              "Vi som är entreprenörer i däckservicebranschen behöver en bra
-              struktur, med seriösa ägare, för att vi skall både kunna växla ut
-              och upp värdet av vårt entreprenörskap."
+              "We entrepreneurs in the tire service industry need a good
+              structure, with serious owners, so we can both cash out and
+              increase the value of our entrepreneurship."
             </blockquote>
             <p class="mt-4 text-sm text-muted-foreground font-medium">
               — Markus Eriksson, Geko Däckservice
@@ -663,22 +853,913 @@
         </div>
       </div>
     </section>
+
+    <!-- WORKSHOP SECTION -->
+    <section id="workshops" class="py-24 section-dark scroll-mt-20">
+      <div class="container">
+        <!-- Heading -->
+        <div id="workshopsHeading" class="text-center max-w-2xl mx-auto mb-14">
+          <span
+            class="text-primary font-semibold text-sm tracking-widest uppercase"
+          >
+            Workshops
+          </span>
+
+          <h2 class="font-display text-3xl md:text-5xl font-bold mt-3 mb-4">
+            Our workshops
+          </h2>
+
+          <p class="opacity-70">
+            Däckverket's workshops are strategically located across Sweden —
+            from Skåne in the south to Västerbotten in the north — offering
+            professional tire service with a focus on quality and customer
+            satisfaction.
+          </p>
+        </div>
+
+        <!-- Grid -->
+        <div
+          id="workshopsGrid"
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto"
+        >
+          <!-- Card -->
+          <a
+            href="https://www.dackteam.se/dackarna-mellerud/"
+            target="_blank"
+            class="bg-secondary/50 rounded-xl p-5 border border-secondary-foreground/10 hover:border-primary/30 transition-colors block"
+          >
+            <div class="flex items-center gap-2 text-primary mb-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+              </svg>
+
+              <span class="text-xs font-medium opacity-80"> Mellerud </span>
+            </div>
+
+            <div class="flex items-start justify-between gap-2">
+              <h3 class="font-display font-semibold">Däckarna i Mellerud</h3>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-external-link w-3.5 h-3.5 text-primary/60 flex-shrink-0 mt-1"
+              >
+                <path d="M15 3h6v6"></path>
+                <path d="M10 14 21 3"></path>
+                <path
+                  d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                ></path>
+              </svg>
+            </div>
+          </a>
+          <!-- Card -->
+          <a
+            href="https://www.dackteam.se/dackarna-mellerud/"
+            target="_blank"
+            class="bg-secondary/50 rounded-xl p-5 border border-secondary-foreground/10 hover:border-primary/30 transition-colors block"
+          >
+            <div class="flex items-center gap-2 text-primary mb-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+              </svg>
+
+              <span class="text-xs font-medium opacity-80"> Mellerud </span>
+            </div>
+
+            <div class="flex items-start justify-between gap-2">
+              <h3 class="font-display font-semibold">Däckarna i Mellerud</h3>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-external-link w-3.5 h-3.5 text-primary/60 flex-shrink-0 mt-1"
+              >
+                <path d="M15 3h6v6"></path>
+                <path d="M10 14 21 3"></path>
+                <path
+                  d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                ></path>
+              </svg>
+            </div>
+          </a>
+          <a
+            href="https://www.dackteam.se/dackarna-mellerud/"
+            target="_blank"
+            class="bg-secondary/50 rounded-xl p-5 border border-secondary-foreground/10 hover:border-primary/30 transition-colors block"
+          >
+            <div class="flex items-center gap-2 text-primary mb-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+              </svg>
+
+              <span class="text-xs font-medium opacity-80"> Mellerud </span>
+            </div>
+
+            <div class="flex items-start justify-between gap-2">
+              <h3 class="font-display font-semibold">Däckarna i Mellerud</h3>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-external-link w-3.5 h-3.5 text-primary/60 flex-shrink-0 mt-1"
+              >
+                <path d="M15 3h6v6"></path>
+                <path d="M10 14 21 3"></path>
+                <path
+                  d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                ></path>
+              </svg>
+            </div>
+          </a>
+          <!-- Card -->
+          <a
+            href="https://www.dackteam.se/dackarna-mellerud/"
+            target="_blank"
+            class="bg-secondary/50 rounded-xl p-5 border border-secondary-foreground/10 hover:border-primary/30 transition-colors block"
+          >
+            <div class="flex items-center gap-2 text-primary mb-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+              </svg>
+
+              <span class="text-xs font-medium opacity-80"> Mellerud </span>
+            </div>
+
+            <div class="flex items-start justify-between gap-2">
+              <h3 class="font-display font-semibold">Däckarna i Mellerud</h3>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-external-link w-3.5 h-3.5 text-primary/60 flex-shrink-0 mt-1"
+              >
+                <path d="M15 3h6v6"></path>
+                <path d="M10 14 21 3"></path>
+                <path
+                  d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                ></path>
+              </svg>
+            </div>
+          </a>
+          <a
+            href="https://www.dackteam.se/dackarna-mellerud/"
+            target="_blank"
+            class="bg-secondary/50 rounded-xl p-5 border border-secondary-foreground/10 hover:border-primary/30 transition-colors block"
+          >
+            <div class="flex items-center gap-2 text-primary mb-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+              </svg>
+
+              <span class="text-xs font-medium opacity-80"> Mellerud </span>
+            </div>
+
+            <div class="flex items-start justify-between gap-2">
+              <h3 class="font-display font-semibold">Däckarna i Mellerud</h3>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-external-link w-3.5 h-3.5 text-primary/60 flex-shrink-0 mt-1"
+              >
+                <path d="M15 3h6v6"></path>
+                <path d="M10 14 21 3"></path>
+                <path
+                  d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                ></path>
+              </svg>
+            </div>
+          </a>
+          <!-- Card -->
+          <a
+            href="https://www.dackteam.se/dackarna-mellerud/"
+            target="_blank"
+            class="bg-secondary/50 rounded-xl p-5 border border-secondary-foreground/10 hover:border-primary/30 transition-colors block"
+          >
+            <div class="flex items-center gap-2 text-primary mb-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+              </svg>
+
+              <span class="text-xs font-medium opacity-80"> Mellerud </span>
+            </div>
+
+            <div class="flex items-start justify-between gap-2">
+              <h3 class="font-display font-semibold">Däckarna i Mellerud</h3>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-external-link w-3.5 h-3.5 text-primary/60 flex-shrink-0 mt-1"
+              >
+                <path d="M15 3h6v6"></path>
+                <path d="M10 14 21 3"></path>
+                <path
+                  d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                ></path>
+              </svg>
+            </div>
+          </a>
+          <a
+            href="https://www.dackteam.se/dackarna-mellerud/"
+            target="_blank"
+            class="bg-secondary/50 rounded-xl p-5 border border-secondary-foreground/10 hover:border-primary/30 transition-colors block"
+          >
+            <div class="flex items-center gap-2 text-primary mb-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+              </svg>
+
+              <span class="text-xs font-medium opacity-80"> Mellerud </span>
+            </div>
+
+            <div class="flex items-start justify-between gap-2">
+              <h3 class="font-display font-semibold">Däckarna i Mellerud</h3>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-external-link w-3.5 h-3.5 text-primary/60 flex-shrink-0 mt-1"
+              >
+                <path d="M15 3h6v6"></path>
+                <path d="M10 14 21 3"></path>
+                <path
+                  d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                ></path>
+              </svg>
+            </div>
+          </a>
+          <!-- Card -->
+          <a
+            href="https://www.dackteam.se/dackarna-mellerud/"
+            target="_blank"
+            class="bg-secondary/50 rounded-xl p-5 border border-secondary-foreground/10 hover:border-primary/30 transition-colors block"
+          >
+            <div class="flex items-center gap-2 text-primary mb-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+              </svg>
+
+              <span class="text-xs font-medium opacity-80"> Mellerud </span>
+            </div>
+
+            <div class="flex items-start justify-between gap-2">
+              <h3 class="font-display font-semibold">Däckarna i Mellerud</h3>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-external-link w-3.5 h-3.5 text-primary/60 flex-shrink-0 mt-1"
+              >
+                <path d="M15 3h6v6"></path>
+                <path d="M10 14 21 3"></path>
+                <path
+                  d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                ></path>
+              </svg>
+            </div>
+          </a>
+          <!-- Card -->
+          <a
+            href="https://www.dackteam.se/dackarna-mellerud/"
+            target="_blank"
+            class="bg-secondary/50 rounded-xl p-5 border border-secondary-foreground/10 hover:border-primary/30 transition-colors block"
+          >
+            <div class="flex items-center gap-2 text-primary mb-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+              </svg>
+
+              <span class="text-xs font-medium opacity-80"> Mellerud </span>
+            </div>
+
+            <div class="flex items-start justify-between gap-2">
+              <h3 class="font-display font-semibold">Däckarna i Mellerud</h3>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-external-link w-3.5 h-3.5 text-primary/60 flex-shrink-0 mt-1"
+              >
+                <path d="M15 3h6v6"></path>
+                <path d="M10 14 21 3"></path>
+                <path
+                  d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                ></path>
+              </svg>
+            </div>
+          </a>
+          <!-- Card -->
+          <a
+            href="https://www.dackteam.se/dackarna-mellerud/"
+            target="_blank"
+            class="bg-secondary/50 rounded-xl p-5 border border-secondary-foreground/10 hover:border-primary/30 transition-colors block"
+          >
+            <div class="flex items-center gap-2 text-primary mb-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+              </svg>
+
+              <span class="text-xs font-medium opacity-80"> Mellerud </span>
+            </div>
+
+            <div class="flex items-start justify-between gap-2">
+              <h3 class="font-display font-semibold">Däckarna i Mellerud</h3>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-external-link w-3.5 h-3.5 text-primary/60 flex-shrink-0 mt-1"
+              >
+                <path d="M15 3h6v6"></path>
+                <path d="M10 14 21 3"></path>
+                <path
+                  d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                ></path>
+              </svg>
+            </div>
+          </a>
+          <a
+            href="https://www.dackteam.se/dackarna-mellerud/"
+            target="_blank"
+            class="bg-secondary/50 rounded-xl p-5 border border-secondary-foreground/10 hover:border-primary/30 transition-colors block"
+          >
+            <div class="flex items-center gap-2 text-primary mb-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+              </svg>
+
+              <span class="text-xs font-medium opacity-80"> Mellerud </span>
+            </div>
+
+            <div class="flex items-start justify-between gap-2">
+              <h3 class="font-display font-semibold">Däckarna i Mellerud</h3>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-external-link w-3.5 h-3.5 text-primary/60 flex-shrink-0 mt-1"
+              >
+                <path d="M15 3h6v6"></path>
+                <path d="M10 14 21 3"></path>
+                <path
+                  d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                ></path>
+              </svg>
+            </div>
+          </a>
+          <!-- Card -->
+          <a
+            href="https://www.dackteam.se/dackarna-mellerud/"
+            target="_blank"
+            class="bg-secondary/50 rounded-xl p-5 border border-secondary-foreground/10 hover:border-primary/30 transition-colors block"
+          >
+            <div class="flex items-center gap-2 text-primary mb-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+              </svg>
+
+              <span class="text-xs font-medium opacity-80"> Mellerud </span>
+            </div>
+
+            <div class="flex items-start justify-between gap-2">
+              <h3 class="font-display font-semibold">Däckarna i Mellerud</h3>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-external-link w-3.5 h-3.5 text-primary/60 flex-shrink-0 mt-1"
+              >
+                <path d="M15 3h6v6"></path>
+                <path d="M10 14 21 3"></path>
+                <path
+                  d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                ></path>
+              </svg>
+            </div>
+          </a>
+          <a
+            href="https://www.dackteam.se/dackarna-mellerud/"
+            target="_blank"
+            class="bg-secondary/50 rounded-xl p-5 border border-secondary-foreground/10 hover:border-primary/30 transition-colors block"
+          >
+            <div class="flex items-center gap-2 text-primary mb-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+              </svg>
+
+              <span class="text-xs font-medium opacity-80"> Mellerud </span>
+            </div>
+
+            <div class="flex items-start justify-between gap-2">
+              <h3 class="font-display font-semibold">Däckarna i Mellerud</h3>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-external-link w-3.5 h-3.5 text-primary/60 flex-shrink-0 mt-1"
+              >
+                <path d="M15 3h6v6"></path>
+                <path d="M10 14 21 3"></path>
+                <path
+                  d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                ></path>
+              </svg>
+            </div>
+          </a>
+          <!-- Card -->
+          <a
+            href="https://www.dackteam.se/dackarna-mellerud/"
+            target="_blank"
+            class="bg-secondary/50 rounded-xl p-5 border border-secondary-foreground/10 hover:border-primary/30 transition-colors block"
+          >
+            <div class="flex items-center gap-2 text-primary mb-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+              </svg>
+
+              <span class="text-xs font-medium opacity-80"> Mellerud </span>
+            </div>
+
+            <div class="flex items-start justify-between gap-2">
+              <h3 class="font-display font-semibold">Däckarna i Mellerud</h3>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-external-link w-3.5 h-3.5 text-primary/60 flex-shrink-0 mt-1"
+              >
+                <path d="M15 3h6v6"></path>
+                <path d="M10 14 21 3"></path>
+                <path
+                  d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                ></path>
+              </svg>
+            </div>
+          </a>
+          <a
+            href="https://www.dackteam.se/dackarna-mellerud/"
+            target="_blank"
+            class="bg-secondary/50 rounded-xl p-5 border border-secondary-foreground/10 hover:border-primary/30 transition-colors block"
+          >
+            <div class="flex items-center gap-2 text-primary mb-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+              </svg>
+
+              <span class="text-xs font-medium opacity-80"> Mellerud </span>
+            </div>
+
+            <div class="flex items-start justify-between gap-2">
+              <h3 class="font-display font-semibold">Däckarna i Mellerud</h3>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-external-link w-3.5 h-3.5 text-primary/60 flex-shrink-0 mt-1"
+              >
+                <path d="M15 3h6v6"></path>
+                <path d="M10 14 21 3"></path>
+                <path
+                  d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                ></path>
+              </svg>
+            </div>
+          </a>
+          <!-- Card -->
+          <a
+            href="https://www.dackteam.se/dackarna-mellerud/"
+            target="_blank"
+            class="bg-secondary/50 rounded-xl p-5 border border-secondary-foreground/10 hover:border-primary/30 transition-colors block"
+          >
+            <div class="flex items-center gap-2 text-primary mb-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+              </svg>
+
+              <span class="text-xs font-medium opacity-80"> Mellerud </span>
+            </div>
+
+            <div class="flex items-start justify-between gap-2">
+              <h3 class="font-display font-semibold">Däckarna i Mellerud</h3>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-external-link w-3.5 h-3.5 text-primary/60 flex-shrink-0 mt-1"
+              >
+                <path d="M15 3h6v6"></path>
+                <path d="M10 14 21 3"></path>
+                <path
+                  d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                ></path>
+              </svg>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRESS SECTION -->
     <section id="press" class="py-24 bg-background scroll-mt-20">
       <div class="container">
-       <div id="pressHeading" class="text-center max-w-2xl mx-auto mb-14 opacity-0 translate-y-8">
-          <span class="text-primary font-semibold text-sm tracking-widest uppercase">Press</span>
-  <h2 class="font-display text-3xl md:text-5xl font-bold text-foreground mt-3 mb-4">Press releases</h2>
-  <p class="text-muted-foreground">Follow Däckverket's growth journey — every acquisition, every milestone.</p>
-</div>
         <div
-        id="pressGrid"
+          id="pressHeading"
+          class="text-center max-w-2xl mx-auto mb-14 opacity-0 translate-y-8"
+        >
+          <span
+            class="text-primary font-semibold text-sm tracking-widest uppercase"
+            >Press</span
+          >
+          <h2
+            class="font-display text-3xl md:text-5xl font-bold text-foreground mt-3 mb-4"
+          >
+            Press releases
+          </h2>
+          <p class="text-muted-foreground">
+            Follow Däckverket's growth journey — every acquisition, every
+            milestone.
+          </p>
+        </div>
+        <div
+          id="pressGrid"
           class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto"
         >
-         <div class="press-item opacity-0 translate-y-8">
-            <a
-              class="group bg-card rounded-xl border border-border overflow-hidden hover:glow-amber hover:border-primary/30 transition-all duration-300 block"
-              href="/en/press/dackspecialisten-koping-joins-dackverket"
-              ><div class="aspect-[16/10] overflow-hidden bg-muted">
+          <div class="press-item opacity-0 translate-y-8">
+           <a
+  class="group bg-card rounded-xl border border-border overflow-hidden hover:glow-amber hover:border-primary/30 transition-all duration-300 block press-link"
+  href="press-details.html"
+  data-id="0"
+>
+              <div class="aspect-[16/10] overflow-hidden bg-muted">
                 <img
                   src="https://www.dackverket.se/wp-content/uploads/2026/01/Sofie-och-Johan_Koping.webp"
                   alt="Däckspecialisten in Köping joins Däckverket"
@@ -741,12 +1822,13 @@
                 </div></div
             ></a>
           </div>
-          
           <div class="press-item opacity-0 translate-y-8">
             <a
-              class="group bg-card rounded-xl border border-border overflow-hidden hover:glow-amber hover:border-primary/30 transition-all duration-300 block"
-              href="/en/press/dackcenter-ulricehamn-joins-dackverket"
-              ><div class="aspect-[16/10] overflow-hidden bg-muted">
+  class="group bg-card rounded-xl border border-border overflow-hidden hover:glow-amber hover:border-primary/30 transition-all duration-300 block press-link"
+  href="press-details.html"
+  data-id="1"
+>
+              <div class="aspect-[16/10] overflow-hidden bg-muted">
                 <img
                   src="https://www.dackverket.se/wp-content/uploads/2026/01/Ulricehamn-kopiera.webp"
                   alt="Däckcenter in Ulricehamn joins Däckverket"
@@ -811,9 +1893,11 @@
           </div>
           <div class="press-item opacity-0 translate-y-8">
             <a
-              class="group bg-card rounded-xl border border-border overflow-hidden hover:glow-amber hover:border-primary/30 transition-all duration-300 block"
-              href="/en/press/dackcenter-boras-joins-dackverket"
-              ><div class="aspect-[16/10] overflow-hidden bg-muted">
+  class="group bg-card rounded-xl border border-border overflow-hidden hover:glow-amber hover:border-primary/30 transition-all duration-300 block press-link"
+  href="press-details.html"
+  data-id="2"
+>
+              <div class="aspect-[16/10] overflow-hidden bg-muted">
                 <img
                   src="https://www.dackverket.se/wp-content/uploads/2026/01/dackverket-boras.webp"
                   alt="Däckcenter in Borås joins Däckverket"
@@ -878,9 +1962,11 @@
           </div>
           <div class="press-item opacity-0 translate-y-8">
             <a
-              class="group bg-card rounded-xl border border-border overflow-hidden hover:glow-amber hover:border-primary/30 transition-all duration-300 block"
-              href="/en/press/erik-rydheimer-appointed-coo"
-              ><div class="aspect-[16/10] overflow-hidden bg-muted">
+  class="group bg-card rounded-xl border border-border overflow-hidden hover:glow-amber hover:border-primary/30 transition-all duration-300 block press-link"
+  href="press-details.html"
+  data-id="3"
+>
+              <div class="aspect-[16/10] overflow-hidden bg-muted">
                 <img
                   src="https://www.dackverket.se/wp-content/uploads/2025/12/Erikv3.webp"
                   alt="Erik Rydheimer appointed COO of Däckverket"
@@ -945,10 +2031,12 @@
             ></a>
           </div>
           <div class="press-item opacity-0 translate-y-8">
-            <a
-              class="group bg-card rounded-xl border border-border overflow-hidden hover:glow-amber hover:border-primary/30 transition-all duration-300 block"
-              href="/en/press/gt-dackservice-kavlinge-joins-dackverket"
-              ><div class="aspect-[16/10] overflow-hidden bg-muted">
+           <a
+  class="group bg-card rounded-xl border border-border overflow-hidden hover:glow-amber hover:border-primary/30 transition-all duration-300 block press-link"
+  href="press-details.html"
+  data-id="4"
+>
+              <div class="aspect-[16/10] overflow-hidden bg-muted">
                 <img
                   src="https://www.dackverket.se/wp-content/uploads/2025/06/dackverket-press-20250626_v2.webp"
                   alt="GT Däckservice in Kävlinge joins Däckverket"
@@ -1013,9 +2101,11 @@
           </div>
           <div class="press-item opacity-0 translate-y-8">
             <a
-              class="group bg-card rounded-xl border border-border overflow-hidden hover:glow-amber hover:border-primary/30 transition-all duration-300 block"
-              href="/en/press/cewe-dack-munka-ljungby-joins-dackverket"
-              ><div class="aspect-[16/10] overflow-hidden bg-muted">
+  class="group bg-card rounded-xl border border-border overflow-hidden hover:glow-amber hover:border-primary/30 transition-all duration-300 block press-link"
+  href="press-details.html"
+  data-id="5"
+>
+              <div class="aspect-[16/10] overflow-hidden bg-muted">
                 <img
                   src="https://www.dackverket.se/wp-content/uploads/2025/06/20250602_162809-kopiera.webp"
                   alt="CEWE Däck in Munka-Ljungby joins Däckverket"
@@ -1078,11 +2168,13 @@
                 </div></div
             ></a>
           </div>
-           <div class="press-item opacity-0 translate-y-8">
+          <div class="press-item opacity-0 translate-y-8">
             <a
-              class="group bg-card rounded-xl border border-border overflow-hidden hover:glow-amber hover:border-primary/30 transition-all duration-300 block"
-              href="/en/press/dackspecialisten-koping-joins-dackverket"
-              ><div class="aspect-[16/10] overflow-hidden bg-muted">
+  class="group bg-card rounded-xl border border-border overflow-hidden hover:glow-amber hover:border-primary/30 transition-all duration-300 block press-link"
+  href="press-details.html"
+  data-id="6"
+>
+              <div class="aspect-[16/10] overflow-hidden bg-muted">
                 <img
                   src="https://www.dackverket.se/wp-content/uploads/2026/01/Sofie-och-Johan_Koping.webp"
                   alt="Däckspecialisten in Köping joins Däckverket"
@@ -1146,188 +2238,158 @@
             ></a>
           </div>
         </div>
-       <div id="pressButtonContainer" class="text-center mt-10"></div>
+        <div id="pressButtonContainer" class="text-center mt-10"></div>
       </div>
     </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-24 bg-background scroll-mt-20">
+      <div class="container max-w-2xl text-center">
+        <!-- Animated Wrapper -->
+        <div
+          id="contact-content"
+          class="opacity-0 translate-y-8 transition-all duration-700 ease-out"
+        >
+          <!-- Label -->
+          <span
+            class="text-primary font-semibold text-sm tracking-widest uppercase"
+          >
+            Contact
+          </span>
+
+          <!-- Title -->
+          <h2
+            class="ont-display text-3xl md:text-5xl font-bold text-foreground mt-3 mb-4"
+          >
+            Get in touch
+          </h2>
+
+          <!-- Description -->
+          <p class="text-muted-foreground mb-10">
+            Want to learn more about Däckverket — as a workshop owner, investor
+            or partner? Don't hesitate to reach out.
+          </p>
+
+          <!-- Buttons -->
+          <div
+            class="flex flex-col sm:flex-row items-center justify-center gap-4"
+          >
+            <!-- Email -->
+            <a
+              href="mailto:info@dackverket.se"
+              class="inline-flex items-center gap-3 bg-primary text-white px-8 py-4 rounded-xl font-semibold text-lg hover:brightness-110 transition shadow-lg"
+            >
+              <i data-lucide="mail" class="w-5 h-5"></i>
+              Send email
+            </a>
+
+            <!-- LinkedIn -->
+            <a
+              href="https://www.linkedin.com/company/dackverket/posts/?feedView=all"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-3 border border-border bg-card text-card-foreground px-8 py-4 rounded-xl font-semibold text-lg hover:border-primary/50 hover:text-primary transition shadow-lg"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-linkedin w-5 h-5"
+              >
+                <path
+                  d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                ></path>
+                <rect width="4" height="12" x="2" y="9"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+              Follow us on LinkedIn
+            </a>
+          </div>
+
+          <!-- Email Text -->
+          <p class="mt-4 text-sm text-muted-foreground">info@dackverket.se</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="section-dark border-t border-white/10 py-10">
+      <div
+        class="container flex flex-col md:flex-row items-center justify-between gap-4"
+      >
+        <div class="flex items-center gap-3">
+          <img
+            src="./images/logo.png"
+            alt="Däckverket"
+            class="h-7 opacity-90"
+          />
+        </div>
+
+        <p class="text-sm opacity-40">
+          © 2026 Däckverket. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script src="/src/main.js"></script>
+    <script>
+      lucide.createIcons();
+      const pressData = [
+    {
+      title: "Däckspecialisten in Köping joins Däckverket",
+      date: "January 26, 2026",
+      image:
+        "https://www.dackverket.se/wp-content/uploads/2026/01/Sofie-och-Johan_Koping.webp",
+      description:
+        "Däckverket has acquired Däckspecialisten in Köping, Västmanland, the group's fifteenth acquisition.",
+      swedishLink:
+        "/press/dackspecialisten-koping-joins-dackverket",
+    },
+
+    {
+      title: "Däckcenter in Ulricehamn joins Däckverket",
+      date: "January 21, 2026",
+      image:
+        "https://www.dackverket.se/wp-content/uploads/2026/01/Ulricehamn-kopiera.webp",
+      description:
+        "Däckverket announces the acquisition of Däckcenter i Ulricehamn AB in Västra Götaland county.",
+      swedishLink:
+        "/press/dackcenter-ulricehamn-joins-dackverket",
+    },
+
+    {
+      title: "Däckcenter in Borås joins Däckverket",
+      date: "January 19, 2026",
+      image:
+        "https://www.dackverket.se/wp-content/uploads/2026/01/dackverket-boras.webp",
+      description:
+        "Däckverket announces the acquisition of Däckcenter i Borås AB in Västra Götaland county.",
+      swedishLink:
+        "/press/dackcenter-boras-joins-dackverket",
+    }
+  ];
+   document.querySelectorAll(".press-link").forEach((card) => {
+    card.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      const id = this.dataset.id;
+
+      localStorage.setItem(
+        "selectedPress",
+        JSON.stringify(pressData[id])
+      );
+
+      window.location.href = "press-details.html";
+    });
+  });
+    </script>
   </body>
 </html>
 
-<script>
-  window.addEventListener("DOMContentLoaded", () => {
-    // Hero title
-    setTimeout(() => {
-      const title = document.querySelector(".hero-title");
-      title.classList.remove("opacity-0", "translate-y-10");
-      title.classList.add("opacity-100", "translate-y-0");
-      title.style.transition = "all 0.8s ease-out";
-    }, 100);
 
-    // Subtitle
-    setTimeout(() => {
-      const subtitle = document.querySelector(".hero-subtitle");
-      subtitle.classList.remove("opacity-0", "translate-y-8");
-      subtitle.classList.add("opacity-100", "translate-y-0");
-      subtitle.style.transition = "all 0.8s ease-out";
-    }, 300);
-
-    // Buttons
-    setTimeout(() => {
-      const buttons = document.querySelector(".hero-buttons");
-      buttons.classList.remove("opacity-0", "translate-y-5");
-      buttons.classList.add("opacity-100", "translate-y-0");
-      buttons.style.transition = "all 0.6s ease-out";
-    }, 600);
-
-    // Stats
-    setTimeout(() => {
-      const stats = document.querySelector(".hero-stats");
-      stats.classList.remove("opacity-0", "translate-y-5");
-      stats.classList.add("opacity-100", "translate-y-0");
-      stats.style.transition = "all 0.8s ease-out";
-    }, 900);
-
-    // Scroll indicator
-    setTimeout(() => {
-      const scroll = document.querySelector(".scroll-indicator");
-      scroll.classList.remove("opacity-0");
-      scroll.classList.add("opacity-100");
-      scroll.style.transition = "opacity 0.8s ease";
-    }, 1200);
-  });
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => {
-            entry.target.classList.remove("opacity-0", "translate-y-10");
-            entry.target.classList.add("opacity-100", "translate-y-0");
-            entry.target.style.transition = "all 0.7s ease-out";
-          }, index * 150);
-        }
-      });
-    },
-    { threshold: 0.2 },
-  );
-
-  document.querySelectorAll(".value-card").forEach((card) => {
-    observer.observe(card);
-  });
-  const aboutObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.remove("opacity-0", "translate-y-10");
-          entry.target.classList.add("opacity-100", "translate-y-0");
-          entry.target.style.transition = "all 0.8s ease-out";
-        }
-      });
-    },
-    { threshold: 0.2 },
-  );
-
-  document.querySelectorAll(".about-content").forEach((item) => {
-    aboutObserver.observe(item);
-  });
-  // Team header animation
-  const teamHeaderObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.remove("opacity-0", "translate-y-10");
-          entry.target.classList.add("opacity-100", "translate-y-0");
-          entry.target.style.transition = "all 0.8s ease-out";
-        }
-      });
-    },
-    { threshold: 0.2 },
-  );
-
-  document.querySelectorAll(".team-header").forEach((item) => {
-    teamHeaderObserver.observe(item);
-  });
-
-  // Team cards stagger animation
-  const teamCardObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => {
-            entry.target.classList.remove("opacity-0", "translate-y-10");
-            entry.target.classList.add("opacity-100", "translate-y-0");
-            entry.target.style.transition = "all 0.7s ease-out";
-          }, index * 150);
-        }
-      });
-    },
-    { threshold: 0.2 },
-  );
-
-  document.querySelectorAll(".team-card").forEach((card) => {
-    teamCardObserver.observe(card);
-  });
-  document.addEventListener("DOMContentLoaded", () => {
-  const heading = document.getElementById("pressHeading");
-  const cards = document.querySelectorAll("#pressGrid .press-item");
-  const btnContainer = document.getElementById("pressButtonContainer");
-  const INITIAL_COUNT = 6;
-  let expanded = false;
-
-  // Hide cards after 6th
-  if (cards.length > INITIAL_COUNT) {
-    cards.forEach((card, idx) => {
-      if (idx >= INITIAL_COUNT) card.classList.add("hidden");
-    });
-  }
-
-  // Heading animation
-  if (heading) {
-    const headingObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          heading.classList.remove("opacity-0", "translate-y-8");
-          heading.classList.add("opacity-100", "translate-y-0");
-        }
-      });
-    }, { threshold: 0.2 });
-    headingObserver.observe(heading);
-  }
-
-  // Card stagger animation
-  const cardsObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry, idx) => {
-      if (entry.isIntersecting && entry.target.classList.contains("opacity-0")) {
-        setTimeout(() => {
-          entry.target.classList.remove("opacity-0", "translate-y-8");
-          entry.target.classList.add("opacity-100", "translate-y-0");
-        }, idx * 100);
-      }
-    });
-  }, { threshold: 0.15 });
-  cards.forEach(card => cardsObserver.observe(card));
-
-  // Create toggle button if more than 6 cards
-  function createToggleButton() {
-    if (cards.length <= INITIAL_COUNT) return;
-    btnContainer.innerHTML = `
-      <button id="togglePressBtn" class="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:brightness-110 transition">
-       Show all (${cards.length - INITIAL_COUNT})
-      </button>
-    `;
-    const toggleBtn = document.getElementById("togglePressBtn");
-    toggleBtn.addEventListener("click", () => {
-      expanded = !expanded;
-      if (expanded) {
-        cards.forEach(card => card.classList.remove("hidden"));
-        toggleBtn.textContent = "Show less";
-      } else {
-        cards.forEach((card, idx) => {
-          if (idx >= INITIAL_COUNT) card.classList.add("hidden");
-        });
-        toggleBtn.textContent = `Show all (${cards.length})`;
-        document.querySelector("#press").scrollIntoView({ behavior: "smooth" });
-      }
-    });
-  }
-  createToggleButton();
-});
-</script>

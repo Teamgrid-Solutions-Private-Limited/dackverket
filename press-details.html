@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Press Details</title>
+
+    <link rel="stylesheet" href="./src/output.css" />
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+
+  <body class="min-h-screen bg-background text-foreground">
+    <!-- NAVBAR -->
+    <nav
+      class="fixed top-0 left-0 right-0 z-50 bg-secondary/95 backdrop-blur-md border-b border-secondary-foreground/10"
+    >
+      <div class="container flex items-center justify-between h-16 md:h-20">
+        <!-- Logo -->
+        <button onclick="goHome()" class="flex items-center gap-2">
+          <img src="./images/logo.png" alt="Logo" class="h-8 md:h-10" />
+        </button>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center gap-8">
+          <a
+            href="index.html#about"
+            class="text-secondary-foreground/80 hover:text-primary transition-colors text-sm font-medium tracking-wide"
+          >
+            About
+          </a>
+
+          <a
+            href="index.html#background"
+            class="text-secondary-foreground/80 hover:text-primary transition-colors text-sm font-medium tracking-wide"
+          >
+            Background
+          </a>
+
+          <a
+            href="index.html#team"
+            class="text-secondary-foreground/80 hover:text-primary transition-colors text-sm font-medium tracking-wide"
+          >
+            Team
+          </a>
+
+          <a
+            href="index.html#workshops"
+            class="text-secondary-foreground/80 hover:text-primary transition-colors text-sm font-medium tracking-wide"
+          >
+            Workshops
+          </a>
+
+          <a
+            href="index.html#press"
+            class="text-primary text-sm font-medium tracking-wide"
+          >
+            Press
+          </a>
+
+          <a
+            href="index.html#contact"
+            class="bg-primary text-primary-foreground px-5 py-2.5 rounded-lg text-sm font-semibold hover:brightness-110 transition"
+          >
+            Contact
+          </a>
+        </div>
+
+        <!-- Mobile -->
+        <div class="md:hidden">
+          <button
+            onclick="toggleMobileMenu()"
+            class="text-secondary-foreground"
+          >
+            <i data-lucide="menu" id="menuIcon" class="w-6 h-6"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobileMenu"
+        class="hidden md:hidden bg-secondary border-t border-secondary-foreground/10"
+      >
+        <div class="container py-4 flex flex-col gap-3">
+          <a href="index.html#about" class="py-2">About</a>
+          <a href="index.html#background" class="py-2">Background</a>
+          <a href="index.html#team" class="py-2">Team</a>
+          <a href="index.html#workshops" class="py-2">Workshops</a>
+          <a href="index.html#press" class="py-2">Press</a>
+          <a href="index.html#contact" class="py-2">Contact</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- PRESS DETAILS -->
+    <div id="pressDetails"></div>
+
+    <!-- FOOTER -->
+    <footer class="section-dark border-t border-white/10 py-10 mt-20">
+      <div
+        class="container flex flex-col md:flex-row items-center justify-between gap-4"
+      >
+        <div class="flex items-center gap-3">
+          <img
+            src="./images/logo.png"
+            alt="Däckverket"
+            class="h-7 opacity-90"
+          />
+        </div>
+
+        <p class="text-sm opacity-40">
+          © 2026 Däckverket. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script src="/src/main.js"></script>
+
+    <script>
+      lucide.createIcons();
+
+      // MOBILE MENU
+      function toggleMobileMenu() {
+        document.getElementById("mobileMenu").classList.toggle("hidden");
+      }
+
+      // HOME
+      function goHome() {
+        window.location.href = "index.html";
+      }
+
+      // GET DATA
+      const data = JSON.parse(localStorage.getItem("selectedPress"));
+
+      // RENDER ARTICLE
+      document.getElementById("pressDetails").innerHTML = `
+        <article class="container max-w-3xl mx-auto px-6 py-28 md:py-32">
+
+          <a
+            class="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors mb-10"
+            href="index.html#press"
+          >
+            <i data-lucide="arrow-left" class="w-4 h-4"></i>
+            Back to Press
+          </a>
+
+          <header class="mb-10 opacity-100 translate-y-0">
+
+            <div class="flex items-center gap-2 text-muted-foreground text-sm mb-4">
+              <i data-lucide="calendar" class="w-4 h-4"></i>
+              ${data.date}
+            </div>
+
+            <h1 class="font-display text-3xl md:text-5xl font-bold leading-tight">
+              ${data.title}
+            </h1>
+
+          </header>
+
+          <div
+            class="overflow-hidden rounded-xl border border-border bg-muted mb-10 flex items-center justify-center"
+          >
+            <img
+              src="${data.image}"
+              alt="${data.title}"
+              class="w-full h-auto max-h-[600px] object-contain"
+              loading="lazy"
+            />
+          </div>
+
+          <div>
+            <p
+              class="text-lg md:text-xl leading-relaxed text-foreground/90 whitespace-pre-line"
+            >
+              ${data.description}
+            </p>
+          </div>
+
+          <div class="mt-12 pt-6 border-t border-border">
+
+            <a
+              class="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+              href="${data.swedishLink}"
+            >
+              Read the full press release in Swedish
+
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+
+          </div>
+
+          <div class="mt-16">
+
+            <a
+              class="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+              href="index.html#press"
+            >
+              <i data-lucide="arrow-left" class="w-4 h-4"></i>
+
+              Back to Press
+            </a>
+
+          </div>
+
+        </article>
+      `;
+
+      // RELOAD ICONS AFTER DYNAMIC HTML
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
