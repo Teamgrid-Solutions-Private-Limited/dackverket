@@ -889,6 +889,10 @@ h1, h2, h3, h4 {
   height: 1px;
 }
 
+.h-2{
+  height: 0.5rem;
+}
+
 .max-h-\[600px\]{
   max-height: 600px;
 }
@@ -928,6 +932,10 @@ h1, h2, h3, h4 {
 
 .w-full{
   width: 100%;
+}
+
+.w-2{
+  width: 0.5rem;
 }
 
 .max-w-2xl{
@@ -1219,6 +1227,10 @@ h1, h2, h3, h4 {
   border-color: rgb(255 255 255 / 0.1);
 }
 
+.border-l-primary{
+  border-left-color: hsl(var(--primary));
+}
+
 .bg-background{
   background-color: hsl(var(--background));
 }
@@ -1275,6 +1287,10 @@ h1, h2, h3, h4 {
   background-color: hsl(var(--secondary) / 0.95);
 }
 
+.bg-primary\/60{
+  background-color: hsl(var(--primary) / 0.6);
+}
+
 .bg-cover{
   background-size: cover;
 }
@@ -1302,14 +1318,14 @@ h1, h2, h3, h4 {
      object-position: center 20%;
 }
 
-.object-\[center_55\%\]{
-  -o-object-position: center 55%;
-     object-position: center 55%;
-}
-
 .object-\[center_45\%\]{
   -o-object-position: center 45%;
      object-position: center 45%;
+}
+
+.object-\[center_55\%\]{
+  -o-object-position: center 55%;
+     object-position: center 55%;
 }
 
 .p-5{
@@ -1938,6 +1954,11 @@ h1, h2, h3, h4 {
 
   .md\:text-xl{
     font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .md\:text-lg{
+    font-size: 1.125rem;
     line-height: 1.75rem;
   }
 }
