@@ -5,14 +5,27 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch"
+    "dev": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch",
+    "clean": "rimraf dist",
+
+  "build:css": "npx tailwindcss -i ./src/input.css -o ./dist/assets/css/output.css --minify",
+
+  "build:html": "cpy \"*.html\" dist",
+
+  "build:js": "cpy \"src/main.js\" dist/assets/js/main.js --parents",
+
+  "build:images": "cpy \"images/**/*\" dist/assets/images --parents",
+
+  "build": "npm run clean && npm run build:css && npm run build:html && npm run build:js && npm run build:images"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^10.5.0",
+    "cpy-cli": "^7.0.0",
     "postcss": "^8.5.14",
+    "rimraf": "^6.1.3",
     "tailwindcss": "^3.4.19"
   },
   "dependencies": {
