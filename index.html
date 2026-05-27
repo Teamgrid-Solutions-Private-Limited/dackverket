@@ -10,7 +10,7 @@
   </head>
   <body class="scroll-smooth">
     <!-- NAVBAR -->
-   <nav
+    <nav
       class="fixed top-0 left-0 right-0 z-50 bg-secondary/95 backdrop-blur-md border-b border-secondary-foreground/10"
     >
       <div class="container flex items-center justify-between h-16 md:h-20">
@@ -18,7 +18,7 @@
         <button onclick="goHome()" class="flex items-center gap-2">
           <img src="./images/logo.png" alt="Logo" class="h-8 md:h-10" />
         </button>
- 
+
         <!-- Desktop Menu -->
         <div class="hidden md:flex items-center gap-8">
           <button
@@ -27,42 +27,42 @@
           >
             About us
           </button>
- 
+
           <button
             onclick="scrollToSection('#principles')"
             class="text-secondary-foreground/80 hover:text-primary transition-colors text-sm font-medium tracking-wide"
           >
             Our culture
           </button>
- 
+
           <button
             onclick="scrollToSection('#from-our-workshops')"
             class="text-secondary-foreground/80 hover:text-primary transition-colors text-sm font-medium tracking-wide"
           >
             Workshops
           </button>
- 
+
           <button
             onclick="scrollToSection('#founders')"
             class="text-secondary-foreground/80 hover:text-primary transition-colors text-sm font-medium tracking-wide"
           >
             The founders
           </button>
- 
+
           <button
             onclick="scrollToSection('#team')"
             class="text-secondary-foreground/80 hover:text-primary transition-colors text-sm font-medium tracking-wide"
           >
             Team
           </button>
- 
+
           <button
             onclick="scrollToSection('#press')"
             class="text-secondary-foreground/80 hover:text-primary transition-colors text-sm font-medium tracking-wide"
           >
             Press
           </button>
- 
+
           <!-- Contact Button -->
           <button
             onclick="scrollToSection('#contact')"
@@ -70,7 +70,7 @@
           >
             Contact
           </button>
- 
+
           <!-- Language Button -->
           <button
             onclick="toggleLanguage()"
@@ -80,7 +80,7 @@
             <span id="desktop-lang">SV</span>
           </button>
         </div>
- 
+
         <!-- Mobile Buttons -->
         <div class="flex md:hidden items-center gap-3">
           <button
@@ -89,7 +89,7 @@
           >
             <i data-lucide="globe" class="w-5 h-5"></i>
           </button>
- 
+
           <button
             onclick="toggleMobileMenu()"
             class="text-secondary-foreground"
@@ -98,7 +98,7 @@
           </button>
         </div>
       </div>
- 
+
       <!-- Mobile Menu -->
       <div
         id="mobileMenu"
@@ -106,48 +106,69 @@
       >
         <div class="container py-4 flex flex-col gap-3">
           <button
-            onclick="scrollToSection('#about'); toggleMobileMenu() "
+            onclick="
+              scrollToSection('#about');
+              toggleMobileMenu();
+            "
             class="text-secondary-foreground/80 hover:text-primary py-2 text-left text-base"
           >
             About us
           </button>
- 
+
           <button
-            onclick="scrollToSection('#principles'); toggleMobileMenu() "
+            onclick="
+              scrollToSection('#principles');
+              toggleMobileMenu();
+            "
             class="text-secondary-foreground/80 hover:text-primary py-2 text-left text-base"
           >
             Our culture
           </button>
- 
+
           <button
-            onclick="scrollToSection('#from-our-workshops'); toggleMobileMenu() "
+            onclick="
+              scrollToSection('#from-our-workshops');
+              toggleMobileMenu();
+            "
             class="text-secondary-foreground/80 hover:text-primary py-2 text-left text-base"
           >
             Workshops
           </button>
- 
+
           <button
-            onclick="scrollToSection('#founders'); toggleMobileMenu() "
+            onclick="
+              scrollToSection('#founders');
+              toggleMobileMenu();
+            "
             class="text-secondary-foreground/80 hover:text-primary py-2 text-left text-base"
           >
             The founders
           </button>
-           <button
-            onclick="scrollToSection('#team'); toggleMobileMenu() "
+          <button
+            onclick="
+              scrollToSection('#team');
+              toggleMobileMenu();
+            "
             class="text-secondary-foreground/80 hover:text-primary py-2 text-left text-base"
           >
             Team
           </button>
- 
+
           <button
-            onclick="scrollToSection('#press'); toggleMobileMenu() "
+            onclick="
+              scrollToSection('#press');
+              toggleMobileMenu();
+            "
             class="text-secondary-foreground/80 hover:text-primary py-2 text-left text-base"
           >
             Press
           </button>
- 
+
           <button
-            onclick="scrollToSection('#contact'); toggleMobileMenu() "
+            onclick="
+              scrollToSection('#contact');
+              toggleMobileMenu();
+            "
             class="bg-primary text-primary-foreground px-5 py-2.5 rounded-lg text-sm font-semibold w-fit"
           >
             Contact
@@ -167,27 +188,27 @@
       <div class="absolute inset-0 bg-black/30" aria-hidden="true"></div>
       <div class="relative z-10 container px-4 pt-28 pb-32 md:pb-40">
         <p
-  class="hero-subtitle opacity-0 translate-y-8 text-xs uppercase tracking-[0.22em] text-primary/90 mb-6"
->
-  Owner group for tyre service workshops
-</p>
+          class="hero-subtitle opacity-0 translate-y-8 text-xs uppercase tracking-[0.22em] text-primary/90 mb-6"
+        >
+          Owner group for tyre service workshops
+        </p>
 
-<h1
-  class="hero-title opacity-0 translate-y-10 font-display text-4xl md:text-6xl lg:text-7xl font-bold  text-section-dark-fg max-w-4xl leading-[1.05]"
->
-  The right people.<br />The right workshops.
-</h1>
+        <h1
+          class="hero-title opacity-0 translate-y-10 font-display text-4xl md:text-6xl lg:text-7xl font-bold text-section-dark-fg max-w-4xl leading-[1.05]"
+        >
+          The right people.<br />The right workshops.
+        </h1>
 
-<p
-  class="hero-subtitle opacity-0 translate-y-8 mt-8 text-lg md:text-xl text-section-dark-fg/75 max-w-2xl leading-relaxed"
->
-  Däckverket builds a group of independent, entrepreneur-led tyre
-  service workshops with high ambitions and strong local leadership.
-</p>
+        <p
+          class="hero-subtitle opacity-0 translate-y-8 mt-8 text-lg md:text-xl text-section-dark-fg/75 max-w-2xl leading-relaxed"
+        >
+          Däckverket builds a group of independent, entrepreneur-led tyre
+          service workshops with high ambitions and strong local leadership.
+        </p>
 
-<div
-  class="hero-buttons opacity-0 translate-y-5 mt-10 flex flex-col sm:flex-row gap-4"
->
+        <div
+          class="hero-buttons opacity-0 translate-y-5 mt-10 flex flex-col sm:flex-row gap-4"
+        >
           <a
             href="#contact"
             class="bg-primary text-primary-foreground px-8 py-3.5 rounded-lg font-semibold text-base hover:brightness-110 transition shadow-lg"
@@ -199,8 +220,8 @@
           >
         </div>
         <div
-  class="hero-stats opacity-0 translate-y-5 mt-16 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 max-w-5xl border-t border-section-dark-fg/10 pt-10"
->
+          class="hero-stats opacity-0 translate-y-5 mt-16 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 max-w-5xl border-t border-section-dark-fg/10 pt-10"
+        >
           <div>
             <div
               class="font-display text-3xl md:text-4xl font-bold text-primary"
@@ -263,9 +284,9 @@
           </div>
         </div>
       </div>
-    <div
-  class="scroll-indicator opacity-0 absolute bottom-8 left-1/2 -translate-x-1/2"
->
+      <div
+        class="scroll-indicator opacity-0 absolute bottom-8 left-1/2 -translate-x-1/2"
+      >
         <a
           href="#about"
           class="text-section-dark-fg/50 hover:text-primary transition animate-bounce"
@@ -287,44 +308,41 @@
       </div>
     </section>
     <!-- FROM OUR WORKSHOP -->
-   <section
-  id="from-our-workshops"
-  aria-label="From our workshops"
-  class="relative w-full overflow-hidden bg-background pt-16 pb-0"
->
-  <div class="container mb-8 flex items-center gap-4">
-    <span class="h-px flex-1 bg-primary/30" aria-hidden="true"></span>
+    <section
+      id="from-our-workshops"
+      aria-label="From our workshops"
+      class="relative w-full overflow-hidden bg-background pt-16 pb-0"
+    >
+      <div class="container mb-8 flex items-center gap-4">
+        <span class="h-px flex-1 bg-primary/30" aria-hidden="true"></span>
 
-    <span class="text-xs uppercase tracking-[0.22em] text-primary/80">
-      From our workshops
-    </span>
+        <span class="text-xs uppercase tracking-[0.22em] text-primary/80">
+          From our workshops
+        </span>
 
-    <span class="h-px flex-1 bg-primary/30" aria-hidden="true"></span>
-  </div>
+        <span class="h-px flex-1 bg-primary/30" aria-hidden="true"></span>
+      </div>
 
-  <div
-    id="workshop-image"
-    class="relative w-full aspect-[16/5] opacity-0"
-  >
-    <img
-      src="/images/cewe-2.jpeg"
-      alt="Tyre storage at one of Däckverket's workshops"
-      class="absolute inset-0 w-full h-full object-cover object-[center_55%]"
-      loading="lazy"
-    />
+      <div id="workshop-image" class="relative w-full aspect-[16/5] opacity-0">
+        <img
+          src="/images/cewe-2.jpeg"
+          alt="Tyre storage at one of Däckverket's workshops"
+          class="absolute inset-0 w-full h-full object-cover object-[center_55%]"
+          loading="lazy"
+        />
 
-    <div class="absolute inset-0 bg-black/25" aria-hidden="true"></div>
-  </div>
-</section>
+        <div class="absolute inset-0 bg-black/25" aria-hidden="true"></div>
+      </div>
+    </section>
     <!-- ABOUT SECTION -->
-   <section
-  id="about"
-  class="py-24 bg-background scroll-mt-20 opacity-0 translate-y-10 transition-all duration-700"
->
+    <section
+      id="about"
+      class="py-24 bg-background scroll-mt-20 opacity-0 translate-y-10 transition-all duration-700"
+    >
       <div class="container max-w-5xl">
-       <div
-  class="about-content opacity-0 translate-y-8 transition-all duration-700"
->
+        <div
+          class="about-content opacity-0 translate-y-8 transition-all duration-700"
+        >
           <span
             class="text-primary font-semibold text-sm tracking-widest uppercase"
             >What we believe</span
@@ -366,9 +384,9 @@
             </p>
           </div>
         </div>
-       <figure
-  class="about-image mt-14 mx-auto max-w-[900px] opacity-0 translate-y-8 transition-all duration-700"
->
+        <figure
+          class="about-image mt-14 mx-auto max-w-[900px] opacity-0 translate-y-8 transition-all duration-700"
+        >
           <div
             class="relative rounded-xl overflow-hidden border border-border aspect-[4/3] md:aspect-[3/2]"
           >
@@ -384,16 +402,16 @@
             Lennart Walerud with Petter Sahlin
           </figcaption>
         </figure>
-       <div
-  class="about-quotes mt-16 opacity-0 translate-y-8 transition-all duration-700"
->
+        <div
+          class="about-quotes mt-16 opacity-0 translate-y-8 transition-all duration-700"
+        >
           <p class="text-sm uppercase tracking-[0.18em] text-primary/90 mb-8">
             Workshop owners we have chosen to work with, in their own words.
           </p>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <figure
-  class="quote-card bg-card rounded-xl p-6 border border-border hover:border-primary/30 transition-all duration-700 opacity-0 translate-y-8"
->
+            <figure
+              class="quote-card bg-card rounded-xl p-6 border border-border hover:border-primary/30 transition-all duration-700 opacity-0 translate-y-8"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -614,14 +632,14 @@
       </div>
     </section>
     <!-- PRINCIPLE SECTION -->
-   <section
-  id="principles"
-  class="py-24 section-dark scroll-mt-20 opacity-0 translate-y-10 transition-all duration-700"
->
+    <section
+      id="principles"
+      class="py-24 section-dark scroll-mt-20 opacity-0 translate-y-10 transition-all duration-700"
+    >
       <div class="container max-w-6xl">
         <div
-  class="principles-header text-center max-w-2xl mx-auto mb-14 opacity-0 translate-y-8 transition-all duration-700"
->
+          class="principles-header text-center max-w-2xl mx-auto mb-14 opacity-0 translate-y-8 transition-all duration-700"
+        >
           <span
             class="text-primary font-semibold text-sm tracking-widest uppercase"
             >How we work</span
@@ -634,9 +652,9 @@
           </p>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-         <article
-  class="principle-card bg-secondary/50 rounded-xl p-6 border border-secondary-foreground/10 hover:border-primary/40 hover:glow-amber transition-all duration-700 opacity-0 translate-y-8"
->
+          <article
+            class="principle-card bg-secondary/50 rounded-xl p-6 border border-secondary-foreground/10 hover:border-primary/40 hover:glow-amber transition-all duration-700 opacity-0 translate-y-8"
+          >
             <div class="text-xs tracking-[0.18em] uppercase text-primary mb-4">
               01 · Autonomy
             </div>
@@ -648,9 +666,9 @@
               day-to-day operations stay local, with you and your team.
             </p>
           </article>
-         <article
-  class="principle-card bg-secondary/50 rounded-xl p-6 border border-secondary-foreground/10 hover:border-primary/40 hover:glow-amber transition-all duration-700 opacity-0 translate-y-8"
->
+          <article
+            class="principle-card bg-secondary/50 rounded-xl p-6 border border-secondary-foreground/10 hover:border-primary/40 hover:glow-amber transition-all duration-700 opacity-0 translate-y-8"
+          >
             <div class="text-xs tracking-[0.18em] uppercase text-primary mb-4">
               02 · Focus
             </div>
@@ -698,97 +716,250 @@
     </section>
     <!-- HOW DO WE DO SECTION -->
     <section id="what-we-do" class="py-24 section-dark scroll-mt-20">
-  <div class="container max-w-3xl">
+      <div class="container max-w-6xl">
+        <div
+          class="text-center max-w-2xl mx-auto mb-16"
+          style="opacity: 1; transform: none"
+        >
+          <h2 class="font-display text-3xl md:text-5xl font-bold mt-3 mb-4">
+            Så bygger vi vidare
+          </h2>
+          <p class="opacity-70">
+            Vi växer genom förvärv och utveckling, alltid med det lokala
+            ledarskapet och det gemensamma utbytet i centrum.
+          </p>
+        </div>
+        <div
+          class="hidden md:grid mx-auto max-w-5xl gap-x-6 gap-y-8"
+          style="
+            grid-template-columns: 1fr minmax(320px, 380px) 1fr;
+            grid-template-rows: auto 380px auto;
+          "
+        >
+          <div
+            class="col-start-2 row-start-2 flex items-center justify-center pointer-events-none"
+          >
+            <svg
+              viewBox="0 0 200 200"
+              class="w-full h-full text-primary"
+              style="opacity: 1; transform: none"
+            >
+              <defs>
+                <marker
+                  id="circ-arrow"
+                  viewBox="0 0 10 10"
+                  refX="6"
+                  refY="5"
+                  markerWidth="6"
+                  markerHeight="6"
+                  orient="auto-start-reverse"
+                >
+                  <path d="M0,0 L10,5 L0,10 z" fill="currentColor"></path>
+                </marker>
+              </defs>
+              <g transform="rotate(0 100 100)">
+                <path
+                  d="M 100 14 A 86 86 0 0 1 186 100"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-opacity="0.55"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  marker-end="url(#circ-arrow)"
+                ></path>
+              </g>
+              <g transform="rotate(90 100 100)">
+                <path
+                  d="M 100 14 A 86 86 0 0 1 186 100"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-opacity="0.55"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  marker-end="url(#circ-arrow)"
+                ></path>
+              </g>
+              <g transform="rotate(180 100 100)">
+                <path
+                  d="M 100 14 A 86 86 0 0 1 186 100"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-opacity="0.55"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  marker-end="url(#circ-arrow)"
+                ></path>
+              </g>
+              <g transform="rotate(270 100 100)">
+                <path
+                  d="M 100 14 A 86 86 0 0 1 186 100"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-opacity="0.55"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  marker-end="url(#circ-arrow)"
+                ></path>
+              </g>
+              <circle
+                cx="100"
+                cy="100"
+                r="4"
+                fill="currentColor"
+                opacity="0.7"
+              ></circle>
+            </svg>
+          </div>
+          <div
+            class="max-w-[30ch] col-start-2 row-start-1 justify-self-center self-end text-center pb-6"
+            style="opacity: 1; transform: none"
+          >
+            <h3 class="font-display text-lg font-bold leading-tight mb-2">
+              Vi söker välskötta verkstäder
+            </h3>
+            <p class="text-sm leading-relaxed opacity-75">
+              Vi söker kontakt med lönsamma verkstäder med stark lokal
+              förankring, en engagerad ägare och ett team som gör skillnad varje
+              dag.
+            </p>
+          </div>
+          <div
+            class="max-w-[30ch] col-start-2 row-start-3 justify-self-center self-start text-center pt-6"
+            style="opacity: 1; transform: none"
+          >
+            <h3 class="font-display text-lg font-bold leading-tight mb-2">
+              Lokalt ledarskap kvarstår
+            </h3>
+            <p class="text-sm leading-relaxed opacity-75">
+              Varje verkstad fortsätter drivas av sin ägare. Kundrelationerna
+              och det lokala kunnandet stannar där de hör hemma.
+            </p>
+          </div>
+          <div
+            class="max-w-[30ch] col-start-1 row-start-2 justify-self-end self-center text-right pr-8"
+            style="opacity: 1; transform: none"
+          >
+            <h3 class="font-display text-lg font-bold leading-tight mb-2">
+              Kunskap och erfarenhet delas
+            </h3>
+            <p class="text-sm leading-relaxed opacity-75">
+              Inom gruppen delar vi erfarenheter om drift, kundvård och
+              affärsutveckling. Det är där den verkliga kraften i Däckverket
+              finns.
+            </p>
+          </div>
+          <div
+            class="max-w-[30ch] col-start-3 row-start-2 justify-self-start self-center text-left pl-8"
+            style="opacity: 1; transform: none"
+          >
+            <h3 class="font-display text-lg font-bold leading-tight mb-2">
+              Förvärv och utveckling
+            </h3>
+            <p class="text-sm leading-relaxed opacity-75">
+              Vi växer såväl genom nya förvärv som genom utveckling av de
+              verkstäder som redan ingår i gruppen. Båda spåren stärker
+              helheten.
+            </p>
+          </div>
+        </div>
+        <div class="md:hidden flex flex-col gap-6">
+          <div
+            class="flex gap-4 items-start"
+            style="opacity: 0; transform: translateY(16px)"
+          >
+            <span
+              class="flex-shrink-0 w-3 h-3 mt-2 rounded-full bg-primary shadow-[0_0_12px_hsl(var(--primary)/0.6)]"
+            ></span>
+            <div class="flex-1">
+              <h3 class="font-display text-lg font-bold mb-1">
+                Vi söker välskötta verkstäder
+              </h3>
+              <p class="text-sm leading-relaxed opacity-80">
+                Vi söker kontakt med lönsamma verkstäder med stark lokal
+                förankring, en engagerad ägare och ett team som gör skillnad
+                varje dag.
+              </p>
+            </div>
+          </div>
+          <div
+            class="flex gap-4 items-start"
+            style="opacity: 0; transform: translateY(16px)"
+          >
+            <span
+              class="flex-shrink-0 w-3 h-3 mt-2 rounded-full bg-primary shadow-[0_0_12px_hsl(var(--primary)/0.6)]"
+            ></span>
+            <div class="flex-1">
+              <h3 class="font-display text-lg font-bold mb-1">
+                Lokalt ledarskap kvarstår
+              </h3>
+              <p class="text-sm leading-relaxed opacity-80">
+                Varje verkstad fortsätter drivas av sin ägare. Kundrelationerna
+                och det lokala kunnandet stannar där de hör hemma.
+              </p>
+            </div>
+          </div>
+          <div
+            class="flex gap-4 items-start"
+            style="opacity: 0; transform: translateY(16px)"
+          >
+            <span
+              class="flex-shrink-0 w-3 h-3 mt-2 rounded-full bg-primary shadow-[0_0_12px_hsl(var(--primary)/0.6)]"
+            ></span>
+            <div class="flex-1">
+              <h3 class="font-display text-lg font-bold mb-1">
+                Kunskap och erfarenhet delas
+              </h3>
+              <p class="text-sm leading-relaxed opacity-80">
+                Inom gruppen delar vi erfarenheter om drift, kundvård och
+                affärsutveckling. Det är där den verkliga kraften i Däckverket
+                finns.
+              </p>
+            </div>
+          </div>
+          <div
+            class="flex gap-4 items-start"
+            style="opacity: 0; transform: translateY(16px)"
+          >
+            <span
+              class="flex-shrink-0 w-3 h-3 mt-2 rounded-full bg-primary shadow-[0_0_12px_hsl(var(--primary)/0.6)]"
+            ></span>
+            <div class="flex-1">
+              <h3 class="font-display text-lg font-bold mb-1">
+                Förvärv och utveckling
+              </h3>
+              <p class="text-sm leading-relaxed opacity-80">
+                Vi växer såväl genom nya förvärv som genom utveckling av de
+                verkstäder som redan ingår i gruppen. Båda spåren stärker
+                helheten.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <!-- Heading -->
-    <div
-      class="mb-12 opacity-0 translate-y-10 transition-all duration-700 whatwedo-animate"
+    <!-- from our workshop -->
+    <section
+      id="from-our-workshops"
+      aria-label="Ur våra verkstäder"
+      class="relative w-full overflow-hidden bg-background pt-16 pb-0"
     >
-      <span
-        class="text-primary font-semibold text-sm tracking-widest uppercase"
-      >
-        What we do
-      </span>
-
-      <h2 class="font-display text-3xl md:text-5xl font-bold mt-3 mb-4">
-        How we keep building
-      </h2>
-
-      <p class="opacity-70">
-        We grow through acquisition and development, always with local
-        leadership and shared exchange at the centre.
-      </p>
-    </div>
-
-    <!-- Content -->
-    <div class="space-y-10">
-
-      <div
-        class="opacity-0 translate-y-10 transition-all duration-700 whatwedo-card"
-      >
-        <h3 class="font-display text-xl md:text-2xl font-bold mb-3">
-          We seek well-run workshops
-        </h3>
-
-        <p class="leading-relaxed opacity-80">
-          We continue to reach out to well-run, profitable workshops with
-          strong local roots, a committed entrepreneur and a team that makes
-          a difference every day. Those are the ones we want to bring into
-          our grouping.
-        </p>
+      <div class="relative w-full aspect-[16/5]" style="opacity: 1">
+        <img
+          src="./images/arvika-2.jpeg"
+          alt="Tekniker hanterar däck i ett av Däckverkets lager"
+          class="absolute inset-0 w-full h-full object-cover object-[center_45%]"
+          loading="lazy"
+        />
+        <div class="absolute inset-0 bg-black/25" aria-hidden="true"></div>
       </div>
-
-      <div
-        class="opacity-0 translate-y-10 transition-all duration-700 whatwedo-card"
-      >
-        <h3 class="font-display text-xl md:text-2xl font-bold mb-3">
-          Acquisition and development
-        </h3>
-
-        <p class="leading-relaxed opacity-80">
-          We grow through both acquisitions and development of the workshops
-          already in the group. The two tracks go hand in hand and
-          strengthen the whole.
-        </p>
-      </div>
-
-      <div
-        class="opacity-0 translate-y-10 transition-all duration-700 whatwedo-card"
-      >
-        <h3 class="font-display text-xl md:text-2xl font-bold mb-3">
-          Local leadership remains
-        </h3>
-
-        <p class="leading-relaxed opacity-80">
-          Our approach stands: strong local leadership remains in place.
-          Customer focus and profitability go together and it is the
-          entrepreneurs who live it daily who carry the business forward.
-        </p>
-      </div>
-
-      <div
-        class="opacity-0 translate-y-10 transition-all duration-700 whatwedo-card"
-      >
-        <h3 class="font-display text-xl md:text-2xl font-bold mb-3">
-          Knowledge and experience
-        </h3>
-
-        <p class="leading-relaxed opacity-80">
-          The exchange of knowledge and experience between the workshops is
-          the foundation of how we work together to develop the group. That
-          is where the real strength of Däckverket lies.
-        </p>
-      </div>
-
-    </div>
-  </div>
-</section>
+    </section>
     <!-- WORKSHOP SECTION -->
     <section id="workshops" class="py-24 section-dark scroll-mt-20">
       <div class="container">
-       <figure
-  class="max-w-6xl mx-auto mb-14 opacity-0 translate-y-10 transition-all duration-700 workshop-animate"
->
+        <figure
+          class="max-w-6xl mx-auto mb-14 opacity-0 translate-y-10 transition-all duration-700 workshop-animate"
+        >
           <div
             class="relative w-full aspect-[16/7] rounded-xl overflow-hidden border border-secondary-foreground/10"
           >
@@ -802,8 +973,8 @@
           </div>
         </figure>
         <div
-  class="text-center max-w-3xl mx-auto mb-14 opacity-0 translate-y-10 transition-all duration-700 workshop-animate"
->
+          class="text-center max-w-3xl mx-auto mb-14 opacity-0 translate-y-10 transition-all duration-700 workshop-animate"
+        >
           <span
             class="text-primary font-semibold text-sm tracking-widest uppercase"
             >Workshops</span
@@ -826,9 +997,9 @@
         <div
           class="grid grid-cols-1 lg:grid-cols-12 gap-10 max-w-6xl mx-auto items-start"
         >
-         <div
-  class="lg:col-span-5 lg:sticky lg:top-24 opacity-0 translate-y-10 transition-all duration-700 workshop-animate"
->
+          <div
+            class="lg:col-span-5 lg:sticky lg:top-24 opacity-0 translate-y-10 transition-all duration-700 workshop-animate"
+          >
             <figure class="w-full">
               <div class="relative w-full max-w-[520px] mx-auto">
                 <svg
@@ -1390,7 +1561,8 @@
                   href="https://www.dackteam.se/dackarna-mellerud/"
                   target="_blank"
                   rel="noopener noreferrer"
-class="bg-secondary/50 rounded-xl p-5 border border-secondary-foreground/10 hover:border-primary/30 transition-all duration-700 opacity-0 translate-y-10 workshop-card block h-full"                  ><div class="flex items-center gap-2 text-primary mb-2">
+                  class="bg-secondary/50 rounded-xl p-5 border border-secondary-foreground/10 hover:border-primary/30 transition-all duration-700 opacity-0 translate-y-10 workshop-card block h-full"
+                  ><div class="flex items-center gap-2 text-primary mb-2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -2155,16 +2327,16 @@ class="bg-secondary/50 rounded-xl p-5 border border-secondary-foreground/10 hove
               </div>
             </div>
             <p
-  class="mt-6 text-sm opacity-0 translate-y-10 transition-all duration-700 workshop-animate"
->
-  We acquire on an ongoing basis.
-  <a
-    href="#contact"
-    class="text-primary hover:opacity-80 underline-offset-4 hover:underline"
-  >
-    Get in touch if you want to know more.
-  </a>
-</p>
+              class="mt-6 text-sm opacity-0 translate-y-10 transition-all duration-700 workshop-animate"
+            >
+              We acquire on an ongoing basis.
+              <a
+                href="#contact"
+                class="text-primary hover:opacity-80 underline-offset-4 hover:underline"
+              >
+                Get in touch if you want to know more.
+              </a>
+            </p>
           </div>
         </div>
       </div>
@@ -2174,8 +2346,8 @@ class="bg-secondary/50 rounded-xl p-5 border border-secondary-foreground/10 hove
     <section id="founders" class="py-24 section-dark scroll-mt-20">
       <div class="container max-w-6xl">
         <div
-  class="max-w-3xl mb-14 opacity-0 translate-y-10 transition-all duration-700 founders-animate"
->
+          class="max-w-3xl mb-14 opacity-0 translate-y-10 transition-all duration-700 founders-animate"
+        >
           <span
             class="text-primary font-semibold text-sm tracking-widest uppercase"
             >The founders</span
@@ -2199,8 +2371,8 @@ class="bg-secondary/50 rounded-xl p-5 border border-secondary-foreground/10 hove
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
           <article
-  class="bg-secondary/50 rounded-xl p-6 md:p-8 border border-secondary-foreground/10 hover:border-primary/40 hover:glow-amber transition-all duration-700 opacity-0 translate-y-10 founders-card flex flex-col h-full"
->
+            class="bg-secondary/50 rounded-xl p-6 md:p-8 border border-secondary-foreground/10 hover:border-primary/40 hover:glow-amber transition-all duration-700 opacity-0 translate-y-10 founders-card flex flex-col h-full"
+          >
             <div
               class="w-16 h-16 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center text-primary font-display text-xl font-bold mb-5"
             >
@@ -2278,9 +2450,9 @@ class="bg-secondary/50 rounded-xl p-5 border border-secondary-foreground/10 hove
               </figcaption>
             </figure>
           </article>
-         <article
-  class="bg-secondary/50 rounded-xl p-6 md:p-8 border border-secondary-foreground/10 hover:border-primary/40 hover:glow-amber transition-all duration-700 opacity-0 translate-y-10 founders-card flex flex-col h-full"
->
+          <article
+            class="bg-secondary/50 rounded-xl p-6 md:p-8 border border-secondary-foreground/10 hover:border-primary/40 hover:glow-amber transition-all duration-700 opacity-0 translate-y-10 founders-card flex flex-col h-full"
+          >
             <div
               class="w-16 h-16 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center text-primary font-display text-xl font-bold mb-5"
             >
@@ -2365,7 +2537,9 @@ class="bg-secondary/50 rounded-xl p-5 border border-secondary-foreground/10 hove
     <!-- TEAM SECTION -->
     <section id="team" class="py-24 bg-background scroll-mt-20">
       <div class="container max-w-6xl">
-        <div class="max-w-3xl opacity-0 translate-y-10 transition-all duration-700 team-animate">
+        <div
+          class="max-w-3xl opacity-0 translate-y-10 transition-all duration-700 team-animate"
+        >
           <span
             class="text-primary font-semibold text-sm tracking-widest uppercase"
             >Team</span
@@ -2386,10 +2560,11 @@ class="bg-secondary/50 rounded-xl p-5 border border-secondary-foreground/10 hove
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
           <div
-           class="bg-card rounded-xl p-6 border border-border hover:border-primary/40 hover:shadow-[0_0_25px_rgba(255,170,0,0.18)] transition-all duration-500 flex flex-col opacity-0 translate-y-10 team-animate hover:-translate-y-2 hover:scale-[1.02]"
+            class="bg-card rounded-xl p-6 border border-border hover:border-primary/40 hover:shadow-[0_0_25px_rgba(255,170,0,0.18)] transition-all duration-500 flex flex-col opacity-0 translate-y-10 team-animate hover:-translate-y-2 hover:scale-[1.02]"
           >
             <div
-class="w-16 h-16 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center text-primary font-display text-xl font-bold mb-4 transition-transform duration-300 hover:scale-110 hover:rotate-2"            >
+              class="w-16 h-16 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center text-primary font-display text-xl font-bold mb-4 transition-transform duration-300 hover:scale-110 hover:rotate-2"
+            >
               LW
             </div>
             <h3 class="font-display text-lg font-bold text-card-foreground">
@@ -2457,10 +2632,11 @@ class="w-16 h-16 rounded-full bg-primary/10 border border-primary/30 flex items-
             </div>
           </div>
           <div
-           class="bg-card rounded-xl p-6 border border-border hover:border-primary/40 hover:shadow-[0_0_25px_rgba(255,170,0,0.18)] transition-all duration-500 flex flex-col opacity-0 translate-y-10 team-animate hover:-translate-y-2 hover:scale-[1.02]"
+            class="bg-card rounded-xl p-6 border border-border hover:border-primary/40 hover:shadow-[0_0_25px_rgba(255,170,0,0.18)] transition-all duration-500 flex flex-col opacity-0 translate-y-10 team-animate hover:-translate-y-2 hover:scale-[1.02]"
           >
             <div
-class="w-16 h-16 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center text-primary font-display text-xl font-bold mb-4 transition-transform duration-300 hover:scale-110 hover:rotate-2"            >
+              class="w-16 h-16 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center text-primary font-display text-xl font-bold mb-4 transition-transform duration-300 hover:scale-110 hover:rotate-2"
+            >
               DG
             </div>
             <h3 class="font-display text-lg font-bold text-card-foreground">
@@ -2528,10 +2704,11 @@ class="w-16 h-16 rounded-full bg-primary/10 border border-primary/30 flex items-
             </div>
           </div>
           <div
-           class="bg-card rounded-xl p-6 border border-border hover:border-primary/40 hover:shadow-[0_0_25px_rgba(255,170,0,0.18)] transition-all duration-500 flex flex-col opacity-0 translate-y-10 team-animate hover:-translate-y-2 hover:scale-[1.02]"
+            class="bg-card rounded-xl p-6 border border-border hover:border-primary/40 hover:shadow-[0_0_25px_rgba(255,170,0,0.18)] transition-all duration-500 flex flex-col opacity-0 translate-y-10 team-animate hover:-translate-y-2 hover:scale-[1.02]"
           >
             <div
-class="w-16 h-16 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center text-primary font-display text-xl font-bold mb-4 transition-transform duration-300 hover:scale-110 hover:rotate-2"            >
+              class="w-16 h-16 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center text-primary font-display text-xl font-bold mb-4 transition-transform duration-300 hover:scale-110 hover:rotate-2"
+            >
               JW
             </div>
             <h3 class="font-display text-lg font-bold text-card-foreground">
@@ -2596,10 +2773,11 @@ class="w-16 h-16 rounded-full bg-primary/10 border border-primary/30 flex items-
             </div>
           </div>
           <div
-           class="bg-card rounded-xl p-6 border border-border hover:border-primary/40 hover:shadow-[0_0_25px_rgba(255,170,0,0.18)] transition-all duration-500 flex flex-col opacity-0 translate-y-10 team-animate hover:-translate-y-2 hover:scale-[1.02]"
+            class="bg-card rounded-xl p-6 border border-border hover:border-primary/40 hover:shadow-[0_0_25px_rgba(255,170,0,0.18)] transition-all duration-500 flex flex-col opacity-0 translate-y-10 team-animate hover:-translate-y-2 hover:scale-[1.02]"
           >
             <div
-class="w-16 h-16 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center text-primary font-display text-xl font-bold mb-4 transition-transform duration-300 hover:scale-110 hover:rotate-2"            >
+              class="w-16 h-16 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center text-primary font-display text-xl font-bold mb-4 transition-transform duration-300 hover:scale-110 hover:rotate-2"
+            >
               ER
             </div>
             <h3 class="font-display text-lg font-bold text-card-foreground">
@@ -2641,8 +2819,9 @@ class="w-16 h-16 rounded-full bg-primary/10 border border-primary/30 flex items-
                 href="https://www.linkedin.com/in/erik-rydheimer-a566bb29/"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1">
-                 <svg
+                class="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1"
+              >
+                <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
                   height="24"
@@ -2664,10 +2843,11 @@ class="w-16 h-16 rounded-full bg-primary/10 border border-primary/30 flex items-
             </div>
           </div>
           <div
-           class="bg-card rounded-xl p-6 border border-border hover:border-primary/40 hover:shadow-[0_0_25px_rgba(255,170,0,0.18)] transition-all duration-500 flex flex-col opacity-0 translate-y-10 team-animate hover:-translate-y-2 hover:scale-[1.02]"
+            class="bg-card rounded-xl p-6 border border-border hover:border-primary/40 hover:shadow-[0_0_25px_rgba(255,170,0,0.18)] transition-all duration-500 flex flex-col opacity-0 translate-y-10 team-animate hover:-translate-y-2 hover:scale-[1.02]"
           >
             <div
-class="w-16 h-16 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center text-primary font-display text-xl font-bold mb-4 transition-transform duration-300 hover:scale-110 hover:rotate-2"            >
+              class="w-16 h-16 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center text-primary font-display text-xl font-bold mb-4 transition-transform duration-300 hover:scale-110 hover:rotate-2"
+            >
               ÅN
             </div>
             <h3 class="font-display text-lg font-bold text-card-foreground">
@@ -2687,7 +2867,8 @@ class="w-16 h-16 rounded-full bg-primary/10 border border-primary/30 flex items-
             <div class="space-y-2 pt-4 border-t border-border">
               <a
                 href="mailto:asa@dackverket.se"
-class="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1"                ><svg
+                class="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1"
+                ><svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
                   height="24"
@@ -2706,9 +2887,9 @@ class="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary 
                 ><span class="truncate">asa@dackverket.se</span></a
               ><a
                 href="https://www.linkedin.com/in/asa-neyman-152272106/"
-                target="_blank"class="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1"
+                target="_blank"
+                class="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1"
                 rel="noopener noreferrer"
-                
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -3245,20 +3426,22 @@ class="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary 
           </div>
         </div>
         <div id="pressButtonContainer" class="text-center mt-10">
-  <button
-    id="showMoreBtn"
-    class="bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:brightness-110 transition"
-  >
-    Show More
-  </button>
-</div>
+          <button
+            id="showMoreBtn"
+            class="bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:brightness-110 transition"
+          >
+            Show More
+          </button>
+        </div>
       </div>
     </section>
 
     <!-- CONTACT SECTION -->
     <section id="contact" class="py-24 bg-background scroll-mt-20">
       <div class="container max-w-3xl text-center">
-       <div class="opacity-0 translate-y-10 transition-all duration-700 contact-animate">
+        <div
+          class="opacity-0 translate-y-10 transition-all duration-700 contact-animate"
+        >
           <span
             class="text-primary font-semibold text-sm tracking-widest uppercase"
             >Contact</span
@@ -3274,7 +3457,9 @@ class="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary 
             to call or write to us directly.
           </p>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
-           <div class="rounded-xl border border-border bg-card/50 p-6 opacity-0 translate-y-10 transition-all duration-700 contact-animate hover:-translate-y-2 hover:shadow-[0_0_25px_rgba(255,170,0,0.15)]">
+            <div
+              class="rounded-xl border border-border bg-card/50 p-6 opacity-0 translate-y-10 transition-all duration-700 contact-animate hover:-translate-y-2 hover:shadow-[0_0_25px_rgba(255,170,0,0.15)]"
+            >
               <h3 class="font-display text-xl font-semibold text-foreground">
                 Lennart Walerud
               </h3>
@@ -3319,7 +3504,9 @@ class="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary 
                 </div>
               </div>
             </div>
-            <div class="rounded-xl border border-border bg-card/50 p-6 opacity-0 translate-y-10 transition-all duration-700 contact-animate hover:-translate-y-2 hover:shadow-[0_0_25px_rgba(255,170,0,0.15)]">
+            <div
+              class="rounded-xl border border-border bg-card/50 p-6 opacity-0 translate-y-10 transition-all duration-700 contact-animate hover:-translate-y-2 hover:shadow-[0_0_25px_rgba(255,170,0,0.15)]"
+            >
               <h3 class="font-display text-xl font-semibold text-foreground">
                 Dariush Ghatan
               </h3>
