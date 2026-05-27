@@ -641,6 +641,11 @@ h1, h2, h3, h4 {
   inset: 0px;
 }
 
+.inset-x-0{
+  left: 0px;
+  right: 0px;
+}
+
 .bottom-8{
   bottom: 2rem;
 }
@@ -843,6 +848,10 @@ h1, h2, h3, h4 {
 
 .aspect-\[4\/3\]{
   aspect-ratio: 4/3;
+}
+
+.aspect-\[1600\/1010\]{
+  aspect-ratio: 1600/1010;
 }
 
 .h-16{
@@ -1289,6 +1298,10 @@ h1, h2, h3, h4 {
 
 .bg-primary\/60{
   background-color: hsl(var(--primary) / 0.6);
+}
+
+.bg-section-dark{
+  background-color: hsl(var(--section-dark-bg));
 }
 
 .bg-cover{
